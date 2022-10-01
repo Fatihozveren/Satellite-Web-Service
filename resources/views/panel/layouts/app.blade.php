@@ -137,19 +137,20 @@
                 </a>
 
             </li>
+
             <li>
-                <a href="{{route('satellite.list')}}" title="Satellites">
-                    <i class="fas fa-podcast"></i>
-                    <span>Satellites</span>
+                <a href="{{route('launchpad.list')}}" title="Satellites">
+                    <i class="fas fa-tachometer"></i>
+                    <span>LaunchPads</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
 
             </li>
 
             <li>
-                <a href="{{route('launchpad.list')}}" title="Satellites">
+                <a href="{{route('satellite.list')}}" title="Satellites">
                     <i class="fas fa-podcast"></i>
-                    <span>LaunchPads</span>
+                    <span>Satellites</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
 

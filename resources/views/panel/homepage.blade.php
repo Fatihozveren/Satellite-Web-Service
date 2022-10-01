@@ -97,7 +97,7 @@
                     <div class="card-nameA">Total Category</div>
                     <div class="contentA">
                         <div class="iconA">
-                            <i class="fad fa-calendar fa-2x"></i>
+                            <i class="fad fa-folder fa-2x"></i>
                         </div>
                         <div class="numberA">
                             <h2>{{\App\Models\Category::all()->count()}}</h2>
@@ -111,7 +111,7 @@
                     <div class="card-nameA">Total Statu</div>
                     <div class="contentA">
                         <div class="iconA">
-                            <i class="fas fa-user fa-2x"></i>
+                            <i class="fas fa-tags fa-2x"></i>
                         </div>
                         <div class="numberA">
                             <h2>{{\App\Models\Status::all()->count()}}</h2>
@@ -125,7 +125,7 @@
                     <div class="card-nameA">Total Satellite</div>
                     <div class="contentA">
                         <div class="iconA">
-                            <i class="fas fa-pen-square fa-2x"></i>
+                            <i class="fas fa-space-shuttle fa-2x"></i>
                         </div>
                         <div class="numberA">
                             <h2>{{\App\Models\Satellite::all()->count()}}</h2>
@@ -139,7 +139,7 @@
                     <div class="card-nameA">Total Scientist </div>
                     <div class="contentA">
                         <div class="iconA">
-                            <i class="fas fa-video fa-2x"></i>
+                            <i class="fas fa-user fa-2x"></i>
                         </div>
                         <div class="numberA">
                             <h2>{{\App\Models\Scientist::all()->count()}}</h2>
@@ -153,7 +153,7 @@
                         <div class="card-nameA">Total Launchpad </div>
                         <div class="contentA">
                             <div class="iconA">
-                                <i class="fas fa-video fa-2x"></i>
+                                <i class="fas fa-tachometer fa-2x"></i>
                             </div>
                             <div class="numberA">
                                 <h2>{{\App\Models\LaunchPad::all()->count()}}</h2>

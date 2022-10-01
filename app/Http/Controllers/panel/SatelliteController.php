@@ -17,12 +17,7 @@ class SatelliteController extends Controller
                 "category_name" => "string|max:255|required",
 
             ],
-            [
 
-                'category_name.required' => 'Kategori Adı boş bırakılamaz.',
-                'category_name.string' => 'Kategori Adı alanında uygun olmayan karakter görüldü.',
-
-            ]
         );
         $category = new Satellite();
         $category->name = \App\Helper\Helper::scriptStripper($request->category_name);
