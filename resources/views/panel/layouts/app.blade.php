@@ -146,6 +146,15 @@
 
             </li>
 
+            <li>
+                <a href="{{route('launchpad.list')}}" title="Satellites">
+                    <i class="fas fa-podcast"></i>
+                    <span>LaunchPads</span>
+                    <i class="fas fa-caret-right"></i>
+                </a>
+
+            </li>
+
         </ul>
 
     </aside>

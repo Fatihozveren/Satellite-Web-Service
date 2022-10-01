@@ -148,6 +148,19 @@
                     <div class="more-menuA">
                         <a href="{{route('scientist.list')}}"> Detaylara Git <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
+                    <div class="cardA">
+                        <div class="card-nameA">Total Launchpad </div>
+                        <div class="contentA">
+                            <div class="iconA">
+                                <i class="fas fa-video fa-2x"></i>
+                            </div>
+                            <div class="numberA">
+                                <h2>{{\App\Models\LaunchPad::all()->count()}}</h2>
+                            </div>
+                        </div>
+                        <div class="more-menuA">
+                            <a href="{{route('launchpad.list')}}"> Detaylara Git <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
 
     </div>
 @endsection
