@@ -131,8 +131,8 @@
                 success: function () {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        html: 'Kategori Oluşturuldu!'
+                        title: 'Successful',
+                        html: 'Satellite Created!'
                     });
 
                     var elements = document.getElementById("create_satellite").elements;
@@ -151,9 +151,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -176,8 +176,8 @@
                 success: function () {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        html: 'Güncelleme Başarılı!'
+                        title: 'Successful',
+                        html: 'Update Successful!'
                     });
 
                     var elements = document.getElementById("update_satellite_post").elements;
@@ -198,9 +198,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -231,9 +231,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -272,12 +272,12 @@
         function deleteSatellite(id) {
             Swal.fire({
                 icon: "warning",
-                title: "Emin misiniz?",
-                html: "Silmek istediğinize emin misiniz?",
+                title: "Are you sure?",
+                html: "Are you sure you want to delete?",
                 showConfirmButton: true,
                 showCancelButton: true,
-                confirmButtonText: "Onayla",
-                cancelButtonText: "İptal",
+                confirmButtonText: "Approve",
+                cancelButtonText: "Cancel",
                 cancelButtonColor: "#e30d0d"
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -292,19 +292,19 @@
                         success: function () {
                             Swal.fire({
                                 icon: "success",
-                                title: "Başarılı",
+                                title: "Successful",
                                 showConfirmButton: true,
-                                confirmButtonText: "Tamam"
+                                confirmButtonText: "OK"
                             });
                             dataTable.ajax.reload();
                         },
                         error: function () {
                             Swal.fire({
                                 icon: "error",
-                                title: "Hata!",
+                                title: "Error!",
                                 html: "<div id=\"validation-errors\"></div>",
                                 showConfirmButton: true,
-                                confirmButtonText: "Tamam"
+                                confirmButtonText: "OK"
                             });
                             $.each(data.responseJSON.errors, function (key, value) {
                                 $('#validation-errors').append('<div class="alert alert-danger">' + value + '</div>');

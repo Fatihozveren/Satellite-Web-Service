@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Satellite extends Model
 {
     use HasFactory;
+
+    protected $table = "satellites";
+
+    protected $fillable = [
+
+    ];
 }

@@ -15,9 +15,9 @@
 
                         <div class="row mt-3 mb-4">
                             <div class="form-group mb-4 col-12">
-                                <label class="mb-1" for="category_name" style="text-decoration: underline;">Statu
+                                <label class="mb-1" for="statu_name" style="text-decoration: underline;">Statu
                                     Name </label>
-                                <input type="text" name="category_name" id="nameUpdate" class="form-control">
+                                <input type="text" name="statu_name" id="nameUpdate" class="form-control">
                             </div>
 
                         </div>
@@ -50,9 +50,9 @@
 
                         <div class="row mt-3 mb-4">
                             <div class="form-group mb-4 col-12">
-                                <label class="mb-1" for="category_name" style="text-decoration: underline;">Statu
+                                <label class="mb-1" for="statu_name" style="text-decoration: underline;">Statu
                                     Name </label>
-                                <input type="text" name="category_name" id="category_name" class="form-control">
+                                <input type="text" name="statu_name" id="statu_name" class="form-control">
 
                             </div>
 
@@ -131,8 +131,8 @@
                 success: function () {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        html: 'Kategori Oluşturuldu!'
+                        title: 'Successful',
+                        html: 'Statu Created!'
                     });
 
                     var elements = document.getElementById("create_statu").elements;
@@ -151,9 +151,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -176,8 +176,8 @@
                 success: function () {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        html: 'Güncelleme Başarılı!'
+                        title: 'Successful',
+                        html: 'Update Successful!'
                     });
 
                     var elements = document.getElementById("update_statu_post").elements;
@@ -198,9 +198,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -231,9 +231,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -272,8 +272,8 @@
         function deleteStatu(id) {
             Swal.fire({
                 icon: "warning",
-                title: "Emin misiniz?",
-                html: "Silmek istediğinize emin misiniz?",
+                title: "Are you sure?",
+                html: "Are you sure you want to delete?",
                 showConfirmButton: true,
                 showCancelButton: true,
                 confirmButtonText: "Onayla",
@@ -292,19 +292,19 @@
                         success: function () {
                             Swal.fire({
                                 icon: "success",
-                                title: "Başarılı",
+                                title: "Successful",
                                 showConfirmButton: true,
-                                confirmButtonText: "Tamam"
+                                confirmButtonText: "OK"
                             });
                             dataTable.ajax.reload();
                         },
                         error: function () {
                             Swal.fire({
                                 icon: "error",
-                                title: "Hata!",
+                                title: "Error!",
                                 html: "<div id=\"validation-errors\"></div>",
                                 showConfirmButton: true,
-                                confirmButtonText: "Tamam"
+                                confirmButtonText: "OK"
                             });
                             $.each(data.responseJSON.errors, function (key, value) {
                                 $('#validation-errors').append('<div class="alert alert-danger">' + value + '</div>');

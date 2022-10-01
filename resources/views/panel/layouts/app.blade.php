@@ -107,14 +107,14 @@
         <ul class="menu">
 
             <li id="anasayfa" class="menuHomePage">
-                <a href="{{route('panel.index')}}" title="Rol İşlemleri">
+                <a href="{{route('panel.index')}}" title="Home">
                     <i class="fas fa-home"></i>
-                    <span>Ana Sayfa</span>
+                    <span>HomePage</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
             </li>
             <li>
-                <a href="{{route('category.list')}}" title="Forms">
+                <a href="{{route('category.list')}}" title="Categories">
                     <i class="fas fa-file"></i>
                     <span>Categories</span>
                     <i class="fas fa-caret-right"></i>
@@ -122,7 +122,7 @@
 
             </li>
             <li>
-                <a href="{{route('statu.list')}}" title="Forms">
+                <a href="{{route('statu.list')}}" title="Status">
                     <i class="fas fa-file-alt"></i>
                     <span>Status</span>
                     <i class="fas fa-caret-right"></i>
@@ -130,7 +130,7 @@
             </li>
 
             <li>
-                <a href="{{route('scientist.list')}}" title="Forms">
+                <a href="{{route('scientist.list')}}" title="Scientist">
                     <i class="fas fa-address-card"></i>
                     <span>Scientist</span>
                     <i class="fas fa-caret-right"></i>
@@ -138,7 +138,7 @@
 
             </li>
             <li>
-                <a href="{{route('satellite.list')}}" title="Forms">
+                <a href="{{route('satellite.list')}}" title="Satellites">
                     <i class="fas fa-podcast"></i>
                     <span>Satellites</span>
                     <i class="fas fa-caret-right"></i>
@@ -151,7 +151,7 @@
     </aside>
     <footer>
         <div style="margin-top: 15px">
-            <p>Designed By | <a href="https://www.linkedin.com/in/yusuf-%C3%A7a%C4%9Flar-aksoy-81b4b6207/">Yusuf Çağlar Aksoy</a></p>
+            <p>Designed By | NimbusHeroes</p>
         </div>
     </footer>
 </div>

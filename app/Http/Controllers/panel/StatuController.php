@@ -14,19 +14,14 @@ class StatuController extends Controller
     {
         $request->validate(
             [
-                "category_name" => "string|max:255|required",
+                "statu_name" => "string|max:255|required",
 
             ],
-            [
 
-                'category_name.required' => 'Kategori Adı boş bırakılamaz.',
-                'category_name.string' => 'Kategori Adı alanında uygun olmayan karakter görüldü.',
-
-            ]
         );
-        $category = new Status();
-        $category->name = \App\Helper\Helper::scriptStripper($request->category_name);
-        $category->save();
+        $statu = new Status();
+        $statu->name = \App\Helper\Helper::scriptStripper($request->statu_name);
+        $statu->save();
         return response()->json(['Success' => 'success']);
 
 
@@ -62,18 +57,18 @@ class StatuController extends Controller
     function get(Request $request)
     {
         $status = Status::where('id', $request->id)->first();
-        return response()->json(['category_name' => $status->name,]);
+        return response()->json(['statu_name' => $status->name,]);
 
     }
 
     function update(Request $request)
     {
         $request->validate([
-            'category_name' => 'required',
+            'statu_name' => 'required',
         ]);
 
         Status::where('id', $request->updateId)->update([
-            'name' => \App\Helper\Helper::scriptStripper($request->category_name),
+            'name' => \App\Helper\Helper::scriptStripper($request->statu_name),
 
         ]);
         return response()->json(['Success' => 'success']);

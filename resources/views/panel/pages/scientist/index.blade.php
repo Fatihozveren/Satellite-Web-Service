@@ -15,9 +15,18 @@
 
                         <div class="row mt-3 mb-4">
                             <div class="form-group mb-4 col-12">
-                                <label class="mb-1" for="category_name" style="text-decoration: underline;">Scientist
+                                <label class="mb-1" for="scientist_name" style="text-decoration: underline;">Scientist
                                     Name </label>
-                                <input type="text" name="category_name" id="nameUpdate" class="form-control">
+                                <input type="text" name="scientist_name" id="nameUpdate" class="form-control">
+
+                                <label class="mb-1" for="scientist_surname" style="text-decoration: underline;">Scientist
+                                    Surname </label>
+                                <input type="text" name="scientist_surname" id="surnameUpdate" class="form-control">
+
+                                <label class="mb-1" for="description" style="text-decoration: underline;">Scientist
+                                    Description </label>
+                                <textarea type="text" name="description" id="descriptionUpdate" class="form-control">
+                                </textarea>
                             </div>
 
                         </div>
@@ -50,9 +59,18 @@
 
                         <div class="row mt-3 mb-4">
                             <div class="form-group mb-4 col-12">
-                                <label class="mb-1" for="category_name" style="text-decoration: underline;">Scientist
+                                <label class="mb-1" for="scientist_name" style="text-decoration: underline;">Scientist
                                     Name </label>
-                                <input type="text" name="category_name" id="category_name" class="form-control">
+                                <input type="text" name="scientist_name" id="scientist_name" class="form-control">
+
+                                <label class="mb-1" for="scientist_surname" style="text-decoration: underline;">Scientist
+                                    Surname </label>
+                                <input type="text" name="scientist_surname" id="scientist_surname" class="form-control">
+
+                                <label class="mb-1" for="description" style="text-decoration: underline;">Scientist
+                                    Description </label>
+                                <textarea type="text" name="description" id="description" class="form-control">
+                                </textarea>
 
                             </div>
 
@@ -85,6 +103,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Scientist Name</th>
+                            <th>Scientist Surname</th>
+                            <th>Description</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -94,6 +114,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Scientist Name</th>
+                            <th>Scientist Surname</th>
+                            <th>Description</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -131,8 +153,8 @@
                 success: function () {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        html: 'Kategori Oluşturuldu!'
+                        title: 'Successful',
+                        html: 'Scientist Created!'
                     });
 
                     var elements = document.getElementById("create_scientist").elements;
@@ -151,9 +173,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -176,8 +198,8 @@
                 success: function () {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        html: 'Güncelleme Başarılı!'
+                        title: 'Successful',
+                        html: 'Update Successful!'
                     });
 
                     var elements = document.getElementById("update_scientist_post").elements;
@@ -198,9 +220,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -209,7 +231,9 @@
 
         function updateScientist(id) {
 
-            var category_name = $('#nameUpdate');
+            var scientist_name = $('#nameUpdate');
+            var scientist_surname = $('#surnameUpdate');
+            var description = $('#descriptionUpdate');
 
             $.ajax({
                 type: 'GET',
@@ -217,7 +241,9 @@
                 data: {id: id},
                 success: function (data) {
 
-                    category_name.val(data.category_name);
+                    scientist_name.val(data.name);
+                    scientist_surname.val(data.surname);
+                    description.val(data.description);
 
                     $('#updateId').val(id);
 
@@ -231,9 +257,9 @@
                     }
                     Swal.fire({
                         icon: 'error',
-                        title: 'Başarısız',
+                        title: 'Unsuccessful',
 
-                        html: 'Bilinmeyen bir hata oluştu.\n' + errors,
+                        html: 'An unknown error has occurred.\n' + errors,
                     });
                 }
             });
@@ -264,6 +290,8 @@
             columns: [
                 {data: 'id'},
                 {data: 'name'},
+                {data: 'surname'},
+                {data: 'description'},
                 {data: 'update'},
                 {data: 'delete'},
             ]
@@ -272,12 +300,12 @@
         function deleteScientist(id) {
             Swal.fire({
                 icon: "warning",
-                title: "Emin misiniz?",
-                html: "Silmek istediğinize emin misiniz?",
+                title: "Are you sure?",
+                html: "Are you sure you want to delete?",
                 showConfirmButton: true,
                 showCancelButton: true,
-                confirmButtonText: "Onayla",
-                cancelButtonText: "İptal",
+                confirmButtonText: "Approve",
+                cancelButtonText: "Cancel",
                 cancelButtonColor: "#e30d0d"
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -292,19 +320,19 @@
                         success: function () {
                             Swal.fire({
                                 icon: "success",
-                                title: "Başarılı",
+                                title: "Successful",
                                 showConfirmButton: true,
-                                confirmButtonText: "Tamam"
+                                confirmButtonText: "OK"
                             });
                             dataTable.ajax.reload();
                         },
                         error: function () {
                             Swal.fire({
                                 icon: "error",
-                                title: "Hata!",
+                                title: "Error!",
                                 html: "<div id=\"validation-errors\"></div>",
                                 showConfirmButton: true,
-                                confirmButtonText: "Tamam"
+                                confirmButtonText: "OK"
                             });
                             $.each(data.responseJSON.errors, function (key, value) {
                                 $('#validation-errors').append('<div class="alert alert-danger">' + value + '</div>');

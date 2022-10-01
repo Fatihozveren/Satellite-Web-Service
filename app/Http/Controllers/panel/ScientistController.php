@@ -14,19 +14,18 @@ class ScientistController extends Controller
     {
         $request->validate(
             [
-                "category_name" => "string|max:255|required",
+                "scientist_name" => "string|max:255|required",
+                "scientist_surname" => "string|max:255|required",
+                "description" => "nullable",
 
             ],
-            [
 
-                'category_name.required' => 'Kategori Adı boş bırakılamaz.',
-                'category_name.string' => 'Kategori Adı alanında uygun olmayan karakter görüldü.',
-
-            ]
         );
-        $category = new Scientist();
-        $category->name = \App\Helper\Helper::scriptStripper($request->category_name);
-        $category->save();
+        $scientist = new Scientist();
+        $scientist->name = \App\Helper\Helper::scriptStripper($request->scientist_name);
+        $scientist->surname = \App\Helper\Helper::scriptStripper($request->scientist_surname);
+        $scientist->description = \App\Helper\Helper::scriptStripper($request->description);
+        $scientist->save();
         return response()->json(['Success' => 'success']);
 
 
@@ -61,19 +60,23 @@ class ScientistController extends Controller
 
     function get(Request $request)
     {
-        $categories = Scientist::where('id', $request->id)->first();
-        return response()->json(['category_name' => $categories->name,]);
+        $scientists = Scientist::where('id', $request->id)->first();
+        return response()->json(['name' => $scientists->name, 'surname' => $scientists->surname, 'description'=>$scientists->description,]);
 
     }
 
     function update(Request $request)
     {
         $request->validate([
-            'category_name' => 'required',
+            'scientist_name' => 'required',
+            'scientist_surname' => 'required',
+            'description' => 'nullable',
         ]);
 
         Scientist::where('id', $request->updateId)->update([
-            'name' => \App\Helper\Helper::scriptStripper($request->category_name),
+            'name' => \App\Helper\Helper::scriptStripper($request->scientist_name),
+            'surname' => \App\Helper\Helper::scriptStripper($request->scientist_surname),
+            'description' => \App\Helper\Helper::scriptStripper($request->description),
 
         ]);
         return response()->json(['Success' => 'success']);
