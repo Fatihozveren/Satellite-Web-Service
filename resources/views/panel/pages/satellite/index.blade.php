@@ -95,9 +95,9 @@
                                     @endforeach
                                 </select>
 
-                                <label class="mb-1" for="launch_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="launchpad_id" style="text-decoration: underline;">Satellite
                                     LaunchPad </label>
-                                <select name="launch_id" id="launch_idUpdate">
+                                <select name="launchpad_id" id="launch_idUpdate">
                                     <option disabled selected>Seçiniz</option>
                                     @foreach($launchpad as $launchpads)
                                         <option value="{{$launchpads->id}}">
@@ -225,9 +225,9 @@
                                     @endforeach
                                 </select>
 
-                                <label class="mb-1" for="launch_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="launchpad_id" style="text-decoration: underline;">Satellite
                                     LaunchPad </label>
-                                <select name="launch_id" id="launch_id">
+                                <select name="launchpad_id" id="launchpad_id">
                                     <option disabled selected>Seçiniz</option>
                                 @foreach($launchpad as $launchpads)
                                         <option value="{{$launchpads->id}}">

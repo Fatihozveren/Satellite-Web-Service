@@ -33,7 +33,7 @@ class SatelliteController extends Controller
                 "category_id" => ['nullable', Rule::exists(Category::class, "id")],
                 "status_id" => ['nullable', Rule::exists(Status::class, "id")],
                 "scientist_id" => ['nullable', Rule::exists(Scientist::class, "id")],
-                "launch_id" => ['nullable', Rule::exists(LaunchPad::class, "id")],
+                "launchpad_id" => ['nullable', Rule::exists(LaunchPad::class, "id")],
 
             ],
 
@@ -143,7 +143,7 @@ class SatelliteController extends Controller
             'category_id' => \App\Helper\Helper::scriptStripper($request->status_id),
             'status_id' => \App\Helper\Helper::scriptStripper($request->status_id),
             'scientist_id' => \App\Helper\Helper::scriptStripper($request->scientist_id),
-            'launchpad_id' => \App\Helper\Helper::scriptStripper($request->launch_id),
+            'launchpad_id' => \App\Helper\Helper::scriptStripper($request->launchpad_id),
             'image' => \App\Helper\Helper::scriptStripper($request->image),
             'image_2' => \App\Helper\Helper::scriptStripper($request->image_2),
 
