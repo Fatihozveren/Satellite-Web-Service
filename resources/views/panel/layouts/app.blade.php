@@ -79,7 +79,7 @@
 <header>
     <div class="headerRight">
 
-        <h2><i class="fas fa-bars"></i> Hoşgeldiniz <strong></strong></h2>
+        <h2><i class="fas fa-bars"></i> Welcome Nimbus Heroes's Panel <strong></strong></h2>
 
         {{--en-tr ayrımı bitiş--}}
         <div>
