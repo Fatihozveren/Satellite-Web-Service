@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('instruments')->nullable();
             $table->string('investigators')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_2')->nullable();
             $table->text('description')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('status_id');
