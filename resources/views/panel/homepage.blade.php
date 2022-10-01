@@ -148,6 +148,7 @@
                     <div class="more-menuA">
                         <a href="{{route('scientist.list')}}"> Detaylara Git <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
+                </div>
                     <div class="cardA">
                         <div class="card-nameA">Total Launchpad </div>
                         <div class="contentA">
