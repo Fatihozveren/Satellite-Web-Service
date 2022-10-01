@@ -10,6 +10,7 @@ use App\Models\Scientist;
 use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Intervention\Image\ImageManagerStatic as img;
 use Yajra\DataTables\DataTables;
 
 class SatelliteController extends Controller
@@ -26,8 +27,8 @@ class SatelliteController extends Controller
                 "altitude" => "numeric",
                 "inclination" => "numeric",
                 "instruments" => "string|max:255",
-                "image" => "string|max:255",
-                "image_2" => "string|max:255",
+                'image'=>'image|mimes:jpeg,png,jpg',
+                'image_2'=>'image|mimes:jpeg,png,jpg',
                 "description" => "string",
                 "category_id" => ['nullable', Rule::exists(Category::class, "id")],
                 "status_id" => ['nullable', Rule::exists(Status::class, "id")],
@@ -37,23 +38,34 @@ class SatelliteController extends Controller
             ],
 
         );
-        $category = new Satellite();
-        $category->name = \App\Helper\Helper::scriptStripper($request->name);
-        $category->mission_name = \App\Helper\Helper::scriptStripper($request->mission_name);
-        $category->link = \App\Helper\Helper::scriptStripper($request->link);
-        $category->launch_date = \App\Helper\Helper::scriptStripper($request->launch_date);
-        $category->complete_date = \App\Helper\Helper::scriptStripper($request->complete_date);
-        $category->altitude = \App\Helper\Helper::scriptStripper($request->altitude);
-        $category->inclination = \App\Helper\Helper::scriptStripper($request->inclination);
-        $category->instruments = \App\Helper\Helper::scriptStripper($request->instruments);
-        $category->description = \App\Helper\Helper::scriptStripper($request->description);
-        $category->category_id = \App\Helper\Helper::scriptStripper($request->category_id);
-        $category->status_id = \App\Helper\Helper::scriptStripper($request->status_id);
-        $category->scientist_id = \App\Helper\Helper::scriptStripper($request->scientist_id);
-        $category->launchpad_id = \App\Helper\Helper::scriptStripper($request->launchpad_id);
-        $category->image = \App\Helper\Helper::scriptStripper($request->image);
-        $category->image_2 = \App\Helper\Helper::scriptStripper($request->image_2);
-        $category->save();
+        $satellite = new Satellite();
+        $satellite->name = \App\Helper\Helper::scriptStripper($request->name);
+        $satellite->mission_name = \App\Helper\Helper::scriptStripper($request->mission_name);
+        $satellite->link = \App\Helper\Helper::scriptStripper($request->link);
+        $satellite->launch_date = \App\Helper\Helper::scriptStripper($request->launch_date);
+        $satellite->complete_date = \App\Helper\Helper::scriptStripper($request->complete_date);
+        $satellite->altitude = \App\Helper\Helper::scriptStripper($request->altitude);
+        $satellite->inclination = \App\Helper\Helper::scriptStripper($request->inclination);
+        $satellite->instruments = \App\Helper\Helper::scriptStripper($request->instruments);
+        $satellite->description = \App\Helper\Helper::scriptStripper($request->description);
+        $satellite->category_id = \App\Helper\Helper::scriptStripper($request->category_id);
+        $satellite->status_id = \App\Helper\Helper::scriptStripper($request->status_id);
+        $satellite->scientist_id = \App\Helper\Helper::scriptStripper($request->scientist_id);
+        $satellite->launchpad_id = \App\Helper\Helper::scriptStripper($request->launchpad_id);
+
+        if ($request->hasFile('image_2')){
+            $imageName2=$request->name.'2.'.$request->image_2->getClientOriginalExtension();
+            $request->image_2->move(public_path('uploads/images_2/'),$imageName2);
+            $satellite->image_2 = $imageName2;
+        }
+
+        if ($request->hasFile('image')){
+            $imageName=$request->name.'.'.$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads/images/'),$imageName);
+            $satellite->image = $imageName;
+        }
+
+        $satellite->save();
         return response()->json(['Success' => 'success']);
 
 
