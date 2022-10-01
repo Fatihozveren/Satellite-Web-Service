@@ -21,7 +21,7 @@ body{
 .linearText{
     font-family: BungeeRegular;
     font-weight: 400;
-    background: linear-gradient(90deg, #236F93 0%, #93709B 81.92%);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--purple)  81.92%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -51,6 +51,29 @@ body{
 @font-face {
     font-family: LatoThin;
     src: url("../fonts/Lato-Thin.ttf");
+}
+@keyframes float {
+    50% {
+        transform: translate3d(-20px,-20px,-20px) rotate3d(4,2,2,20deg);
+    }
+    100% {
+        transform: translate3d(20px,20px,20px) rotate3d(4,2,2,20deg);
+    }
+}
+@keyframes rotating {
+    0% {
+        left: 150px;
+        bottom: 150px;
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100% {
+        left: -90px;
+        bottom: -90px;
+        transform: scale(0);
+    }
 }
 header{
     position: absolute;
@@ -123,15 +146,26 @@ header ul li.active:before {
     padding-top: 80px;
     height: 100vh;
 }
-.entrance>img{
+.entrance>.entrance-img{
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     background-size: cover;
     width: 100%;
-    background-image: url("../../media/entrance.png");
-    opacity: .5;
+}
+.entrance>.entrance-img img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.entrance>.entrance-img:before{
+    content: "";
+    position: absolute;
+    z-index: 55;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .entrance>img:before{
     position: absolute;
@@ -149,7 +183,7 @@ header ul li.active:before {
     align-items: center;
 }
 .entrance .entrance-inner>div{
-    width: 40%;
+    width: 45%;
 }
 .entrance .entrance-inner .entrance-left{
     display: flex;
@@ -170,31 +204,235 @@ header ul li.active:before {
     font-size: 20px;
     line-height: 24px;
 }
-.entrance .entrance-inner .right{
+.entrance .entrance-inner .entrance-right{
 
 }
-.entrance .entrance-inner .right img{
-
+.entrance .entrance-inner .entrance-right img{
+    width: 100%;
+    animation: float 6s infinite ease-in-out alternate;
 }
 .datas{
     display: flex;
     padding: 60px;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
 }
 .datas .data{
-    clip-path: polygon(0% 0%, 86% 0%, 100% 10%, 100% 100%, 17% 100%, 0% 81%);
-    padding: 2px;
+    position: relative;
+    width: 325px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.datas .data h4{
-
+.datas .data.big{
+    width: 380px;
+    height: 255px;
 }
-.datas .data.big h4{
-
+.datas .data:before{
+    content: "";
+    position: absolute;
+    background-image: url("../../media/border1.png");
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-.datas .data.big h3{
-
+.datas .data.big:before{
+    background-image: url("../../media/border2.png");
 }
 .datas .data h3{
-
+    font-family: BungeeRegular;
+    color: white;
+    font-size: 32px;
 }
-
+.datas .data.big h3{
+    font-size: 38px;
+}
+.future-satellites{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 80px auto;
+}
+.future-satellites>h1{
+    font-family: BungeeHairline;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.future-satellites .future-satellites-top{
+    display: flex;
+    max-width: 1080px;
+    margin: auto;
+}
+.future-satellites .future-satellites-left{
+    position: relative;
+    height: 350px;
+    width: 350px;
+}
+.future-satellites .future-satellites-left .future-satellites-earth{
+    width: 100%;
+}
+.future-satellites .future-satellites-left .future-satellites-earth:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    z-index: 1;
+    left: 0;
+}
+.future-satellites .future-satellites-left .future-satellites-earth img{
+    width: 350px;
+    position: absolute;
+}
+.future-satellites .future-satellites-left .satellites{
+    width: 500px;
+    position: relative;
+    height: 100%;
+}
+.future-satellites .future-satellites-left .satellites .satellite{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    transition: 400ms all;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 55;
+}
+.future-satellites .future-satellites-left .satellites .satellite.active{
+    opacity: 1;
+    visibility: visible;
+    animation: rotating 15s infinite ease-in-out alternate;
+}
+.future-satellites .future-satellites-left .satellites .satellite img{
+    width: 100%;
+    object-fit: contain;
+    transition: 400ms all;
+}
+.future-satellites .future-satellites-right{
+    width: calc(100% - 350px);
+    padding-left: 50px;
+}
+.future-satellites .future-satellites-right .satellite-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.future-satellites .future-satellites-right .satellite-text h4{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.future-satellites .future-satellites-right .satellite-text div{
+    font-family: 'BungeeHairline';
+    color: white;
+}
+.future-satellites .future-satellites-right .satellite-text div p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.future-satellites .future-satellites-right .satellite-text div p b{
+    font-family: 'BungeeRegular';
+    font-weight: 100;
+    margin-right: 5px;
+}
+.future-satellites .other-satellites-slider{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: calc((100vw / 8) + 80px);
+    padding-top: 50px;
+}
+.future-satellites .other-satellites-slider>i{
+    position: absolute;
+    font-weight: 300;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 55;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    top: 0px;
+    cursor: pointer;
+    transition: 400ms all;
+}
+.future-satellites .other-satellites-slider>i:hover {
+    background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 81.92%);
+    color: white;
+}
+.future-satellites .other-satellites-slider>i.fa-arrow-right-long{
+    right: 0;
+}
+.future-satellites .other-satellites-slider .other-satellites-slides{
+    position: relative;
+}
+.future-satellites .other-satellites-slider .other-satellites-slides .other-satellites{
+    display: flex;
+    width: max-content;
+    position: absolute;
+}
+.future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
+    width: calc(100vw / 8);
+    height: calc(100vw / 8);
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.future-satellites .other-satellites-slider .other-satellites-slides .other-satellites img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.future-satellites .other-satellites-slider .other-satellites-slides .other-satellites h4{
+    color: white;
+    font-family: 'BungeeHairline';
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #00000090;
+    transition: 400ms all;
+    opacity: 0;
+    visibility: hidden;
+}
+.future-satellites .other-satellites-slider .other-satellites-slides .other-satellites .other-satellite:hover  h4{
+    opacity: 1;
+    visibility: visible;
+}
+@media only screen and (max-width: 1500px) {
+    .nasaContainer{
+        width: 95%;
+    }
+    .future-satellites .other-satellites-slider{
+        height: calc((100vw / 7) + 80px);
+    }
+    .future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
+        width: calc(100vw / 7);
+        height: calc(100vw / 7);
+        padding: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+}

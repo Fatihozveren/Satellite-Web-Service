@@ -10,6 +10,7 @@
     <link rel="icon" href="{{asset("media/logo.ico")}}" type="image/x-icon">
     <script src="{{asset('jquery/jquery-3.6.0.js')}}"></script>
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('font-awesome/css/all.css')}}"/>
     <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
 </head>
 <body>
