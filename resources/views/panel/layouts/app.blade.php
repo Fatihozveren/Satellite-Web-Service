@@ -14,6 +14,9 @@
 
     <script src="{{asset('jquery/jquery-3.6.0.js')}}"></script>
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 
 </head>
 <style>
@@ -80,19 +83,11 @@
 
         {{--en-tr ayrımı bitiş--}}
         <div>
-            <li style="margin-top: 6px;margin-right: 10px;color: black; font-size: 20px;" class="language-button" tabindex="1">
-                <a style="font-size: 18px; color: black;text-decoration: none" hreflang="tr"
-                   href="">TR</a>&nbsp;/&nbsp;<a
-                    style="font-size: 18px; color: black;text-decoration: none" hreflang="en"
-                    href="">EN</a>
-            </li>
 
             <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
-                <a href=""  target="_blank" class="btn green" >Sayfaya Git</a>
+                <a href=""  target="_blank" class="btn green" >Go to Page</a>
             </li>
-            <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
-                <a href="" class="btn red"  style="margin-left: 10px">Çıkış Yap</a>
-            </li>
+
         </div>
     </div>
 </header>
@@ -104,7 +99,7 @@
             <a href="">
                 <img src="{{asset("front/img/logo.png")}}" alt="">
                 <div>
-                    <h2>RoboAdam</h2>
+                    <h2>Nimbus</h2>
                     <h2>Panel</h2>
                 </div>
             </a>
@@ -112,22 +107,22 @@
         <ul class="menu">
 
             <li id="anasayfa" class="menuHomePage">
-                <a href="" title="Rol İşlemleri">
+                <a href="{{route('panel.index')}}" title="Rol İşlemleri">
                     <i class="fas fa-home"></i>
                     <span>Ana Sayfa</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
             </li>
             <li>
-                <a href="" title="Forms">
-                    <i class="fas fa-podcast"></i>
-                    <span>Satellites</span>
+                <a href="{{route('category.list')}}" title="Forms">
+                    <i class="fas fa-file"></i>
+                    <span>Categories</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
 
             </li>
             <li>
-                <a href="" title="Forms">
+                <a href="{{route('statu.list')}}" title="Forms">
                     <i class="fas fa-file-alt"></i>
                     <span>Status</span>
                     <i class="fas fa-caret-right"></i>
@@ -135,22 +130,22 @@
             </li>
 
             <li>
-                <a href="" title="Forms">
-                    <i class="fas fa-file"></i>
-                    <span>Categories</span>
-                    <i class="fas fa-caret-right"></i>
-                </a>
-
-            </li>
-
-            <li>
-                <a href="" title="Forms">
+                <a href="{{route('scientist.list')}}" title="Forms">
                     <i class="fas fa-address-card"></i>
                     <span>Scientist</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
 
             </li>
+            <li>
+                <a href="{{route('satellite.list')}}" title="Forms">
+                    <i class="fas fa-podcast"></i>
+                    <span>Satellites</span>
+                    <i class="fas fa-caret-right"></i>
+                </a>
+
+            </li>
+
         </ul>
 
     </aside>
@@ -167,6 +162,8 @@
 <script src="{{asset('panel/js/index.js')}}"></script>
 <!--bootstrap 5.0.2 js-->
 <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @yield("scripts")
 <script>
     $(".open-modal").click(function (event) {
