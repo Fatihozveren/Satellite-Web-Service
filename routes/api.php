@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/sattelites/all_satellites', [\App\Http\Controllers\API\ApiResponseController::class,'getAllSatellites']);
-Route::get('/categories/all_categories', [\App\Http\Controllers\API\ApiResponseController::class,'getAllCategories']);
-Route::get('/all_status', [\App\Http\Controllers\API\ApiResponseController::class,'getAllStatus']);
+
+    Route::get('/sattelites/all_satellites', [\App\Http\Controllers\API\ApiResponseController::class,'getAllSatellites']);
+    Route::get('/categories/all_categories', [\App\Http\Controllers\API\ApiResponseController::class,'getAllCategories']);
+    Route::get('/all_status', [\App\Http\Controllers\API\ApiResponseController::class,'getAllStatus']);
+    Route::get('/all_launchpads', [\App\Http\Controllers\API\ApiResponseController::class, 'getAllLaunchpads']);
+    Route::get('/launchpad_satellites', [\App\Http\Controllers\API\ApiResponseController::class, 'getLaunchpadSatellites']);
 
 
 

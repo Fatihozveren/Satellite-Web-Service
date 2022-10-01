@@ -6,6 +6,7 @@ use App\Http\Controllers\API\BaseController;
 use App\Helper\Enum\ResponseCodes;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\LaunchPad;
 use App\Models\Satellite;
 use App\Models\Status;
 use Faker\Provider\Base;
@@ -17,7 +18,7 @@ class ApiResponseController extends BaseController
 
     /**
      * @OA\Get (
-     *     tags={"Satellite"},
+     *     tags={"Satellites"},
      *     path="/api/sattelites/all_satellites",
      *     description="Get all satellites information",
      *     @OA\Response(response="200", description="Ok"),
@@ -39,6 +40,43 @@ class ApiResponseController extends BaseController
         } else {
             return $this->sendError(
                 'Satellite data can not found',
+                ResponseCodes::getErrorMessages('REQUIRED_PARAMETER'),
+                ResponseCodes::NOT_FOUND);
+        }
+    }
+
+    /**
+     * @OA\Get (
+     *     tags={"Satellites"},
+     *     path="/api/launchpad_satellites",
+     *     description="Get satellites by launcpad id",
+     *     @OA\Parameter(
+     *      name="launchpad_id",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *      ),
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="401", description="Unauthorized"),
+     *     @OA\Response(response="404", description="Not Found"),
+     *     @OA\Response(response="500", description="Server Error"),
+     * )
+     */
+
+    public function getLaunchpadSatellites(Request $request)
+    {
+        $satellites = Satellite::where('launchpad_id', $request->launchpad_id)->get();
+        if ( count($satellites) > 0) {
+            return $this->sendResponse(
+                $satellites,
+                ResponseCodes::getSuccessMessages('OK')
+            );
+        } else {
+            return $this->sendError(
+                'Satellites data can not found',
                 ResponseCodes::getErrorMessages('REQUIRED_PARAMETER'),
                 ResponseCodes::NOT_FOUND);
         }
@@ -101,4 +139,34 @@ class ApiResponseController extends BaseController
                 ResponseCodes::NOT_FOUND);
         }
     }
+
+    /**
+     * @OA\Get (
+     *     tags={"Launchpads"},
+     *     path="/api/all_launchpads",
+     *     description="Get all launchpads information",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="401", description="Unauthorized"),
+     *     @OA\Response(response="404", description="Not Found"),
+     *     @OA\Response(response="500", description="Server Error"),
+     * )
+     */
+
+    public function getAllLaunchpads()
+    {
+        $launchpads = LaunchPad::all();
+        if ( count($launchpads) > 0) {
+            return $this->sendResponse(
+                $launchpads,
+                ResponseCodes::getSuccessMessages('OK')
+            );
+        } else {
+            return $this->sendError(
+                'Launchpads data can not found',
+                ResponseCodes::getErrorMessages('REQUIRED_PARAMETER'),
+                ResponseCodes::NOT_FOUND);
+        }
+    }
+
 }

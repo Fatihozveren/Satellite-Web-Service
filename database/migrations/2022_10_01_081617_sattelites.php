@@ -27,15 +27,15 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('image_2')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('status_id');
-            $table->unsignedBigInteger('scientist_id');
-            $table->unsignedBigInteger('launch_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('status_id')->nullable();
+            $table->unsignedBigInteger('scientist_id')->nullable();
+            $table->unsignedBigInteger('launchpad_id')->nullable();
             $table->timestamps();
             $table->foreign('scientist_id')->references('id')->on('scientists');
             $table->foreign('status_id')->references('id')->on('status');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('launch_id')->references('id')->on('launchpad');
+            $table->foreign('launchpad_id')->references('id')->on('launchpad');
 
         });
     }
