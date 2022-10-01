@@ -14,4 +14,8 @@ class Status extends Model
     protected $fillable = [
 
     ];
+
+    public function getSatellite(){
+        return $this->hasMany('App\Models\Satellite','status_id','id');
+    }
 }

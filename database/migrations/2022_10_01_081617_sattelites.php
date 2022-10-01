@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('altitude')->nullable();
             $table->string('inclination')->nullable();
             $table->string('instruments')->nullable();
-            $table->string('investigators')->nullable();
             $table->string('image')->nullable();
             $table->string('image_2')->nullable();
             $table->text('description')->nullable();

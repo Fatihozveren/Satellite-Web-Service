@@ -15,11 +15,106 @@
 
                         <div class="row mt-3 mb-4">
                             <div class="form-group mb-4 col-12">
-                                <label class="mb-1" for="category_name" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="name" style="text-decoration: underline;">Satellite
                                     Name </label>
-                                <input type="text" name="category_name" id="nameUpdate" class="form-control">
-                            </div>
+                                <input type="text" name="name" id="nameUpdate" class="form-control">
 
+                                <label class="mb-1" for="mission_name" style="text-decoration: underline;">Satellite Mission
+                                    Name </label>
+                                <input type="text" name="mission_name" id="mission_nameUpdate" class="form-control">
+
+                                <label class="mb-1" for="link" style="text-decoration: underline;">Satellite Link
+                                </label>
+                                <input type="text" name="link" id="linkUpdate" class="form-control">
+
+                                <label class="mb-1" for="launch_date" style="text-decoration: underline;">Satellite Launch Date
+                                </label>
+                                <input type="date" name="launch_date" id="launch_dateUpdate" class="form-control">
+
+                                <label class="mb-1" for="complete_date" style="text-decoration: underline;">Satellite Complete Date
+                                </label>
+                                <input type="date" name="complete_date" id="complete_dateUpdate" class="form-control">
+
+                                <label class="mb-1" for="altitude" style="text-decoration: underline;">Satellite Altitude
+                                </label>
+                                <input type="number" name="altitude" id="altitudeUpdate" class="form-control">
+
+                                <label class="mb-1" for="inclination" style="text-decoration: underline;">Satellite Inclination
+                                </label>
+                                <input type="number" name="inclination" id="inclinationUpdate" class="form-control">
+
+                                <label class="mb-1" for="instruments" style="text-decoration: underline;">Satellite
+                                    Instruments </label>
+                                <input type="text" name="instruments" id="instrumentsUpdate" class="form-control">
+
+                                <label class="mb-1" for="description" style="text-decoration: underline;">Satellite
+                                    Description </label>
+                                <textarea type="text" name="description" id="descriptionUpdate" class="form-control"></textarea>
+
+                                <label class="mb-1" for="category_id" style="text-decoration: underline;">Satellite
+                                    Category </label>
+                                <select name="category_id" id="category_idUpdate">
+                                    <option disabled selected>Seçiniz</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->id}}">
+                                            {{$category->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="status_id" style="text-decoration: underline;">Satellite
+                                    Statu </label>
+                                <select name="status_id" id="status_idUpdate">
+                                    <option disabled selected>Seçiniz</option>
+                                    @foreach($status as $statu)
+                                        <option value="{{$statu->id}}">
+                                            {{$statu->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="scientist_id" style="text-decoration: underline;">Satellite
+                                    Scientist </label>
+                                <select name="scientist_id" id="scientist_idUpdate">
+                                    <option disabled selected>Seçiniz</option>
+                                    @foreach($scientist as $scientists)
+                                        <option value="{{$scientists->id}}">
+                                            {{$scientists->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="scientist_id2" style="text-decoration: underline;">Satellite
+                                    Scientist </label>
+                                <select name="scientist_id2" id="scientist_id2Update">
+                                    <option disabled selected>Seçiniz</option>
+                                    @foreach($scientist as $scientists)
+                                        <option value="{{$scientists->id}}">
+                                            {{$scientists->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="launch_id" style="text-decoration: underline;">Satellite
+                                    LaunchPad </label>
+                                <select name="launch_id" id="launch_idUpdate">
+                                    <option disabled selected>Seçiniz</option>
+                                    @foreach($launchpad as $launchpads)
+                                        <option value="{{$launchpads->id}}">
+                                            {{$launchpads->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="image" style="text-decoration: underline;">Satellite
+                                    Image </label>
+                                <input type="file" name="image" id="imageUpdate" class="form-control">
+
+                                <label class="mb-1" for="image2" style="text-decoration: underline;">Satellite
+                                    Detail Image </label>
+                                <input type="file" name="image2" id="image2Update" class="form-control">
+
+                            </div>
                         </div>
 
                         <input type="hidden" name="updateId" id="updateId">
@@ -50,9 +145,104 @@
 
                         <div class="row mt-3 mb-4">
                             <div class="form-group mb-4 col-12">
-                                <label class="mb-1" for="category_name" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="name" style="text-decoration: underline;">Satellite
                                     Name </label>
-                                <input type="text" name="category_name" id="category_name" class="form-control">
+                                <input type="text" name="name" id="name" class="form-control">
+
+                                <label class="mb-1" for="mission_name" style="text-decoration: underline;">Satellite Mission
+                                    Name </label>
+                                <input type="text" name="mission_name" id="mission_name" class="form-control">
+
+                                <label class="mb-1" for="link" style="text-decoration: underline;">Satellite Link
+                                </label>
+                                <input type="text" name="link" id="link" class="form-control">
+
+                                <label class="mb-1" for="launch_date" style="text-decoration: underline;">Satellite Launch Date
+                                     </label>
+                                <input type="date" name="launch_date" id="launch_date" class="form-control">
+
+                                <label class="mb-1" for="complete_date" style="text-decoration: underline;">Satellite Complete Date
+                                     </label>
+                                <input type="date" name="complete_date" id="complete_date" class="form-control">
+
+                                <label class="mb-1" for="altitude" style="text-decoration: underline;">Satellite Altitude
+                                     </label>
+                                <input type="number" name="altitude" id="altitude" class="form-control">
+
+                                <label class="mb-1" for="inclination" style="text-decoration: underline;">Satellite Inclination
+                                     </label>
+                                <input type="number" name="inclination" id="inclination" class="form-control">
+
+                                <label class="mb-1" for="instruments" style="text-decoration: underline;">Satellite
+                                    Instruments </label>
+                                <input type="text" name="instruments" id="instruments" class="form-control">
+
+                                <label class="mb-1" for="description" style="text-decoration: underline;">Satellite
+                                    Description </label>
+                                <textarea type="text" name="description" id="description" class="form-control"></textarea>
+
+                                <label class="mb-1" for="category_id" style="text-decoration: underline;">Satellite
+                                    Category </label>
+                                <select name="category_id" id="category_id">
+                                    <option disabled selected>Seçiniz</option>
+                                @foreach($categories as $category)
+                                        <option value="{{$category->id}}">
+                                            {{$category->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="status_id" style="text-decoration: underline;">Satellite
+                                    Statu </label>
+                                <select name="status_id" id="status_id">
+                                    <option disabled selected>Seçiniz</option>
+                                @foreach($status as $statu)
+                                        <option value="{{$statu->id}}">
+                                            {{$statu->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="scientist_id" style="text-decoration: underline;">Satellite
+                                    Scientist </label>
+                                <select name="scientist_id" id="scientist_id">
+                                    <option disabled selected>Seçiniz</option>
+                                @foreach($scientist as $scientists)
+                                        <option value="{{$scientists->id}}">
+                                            {{$scientists->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="scientist_id2" style="text-decoration: underline;">Satellite
+                                    Scientist </label>
+                                <select name="scientist_id2" id="scientist_id2">
+                                    <option disabled selected>Seçiniz</option>
+                                @foreach($scientist as $scientists)
+                                        <option value="{{$scientists->id}}">
+                                            {{$scientists->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="launch_id" style="text-decoration: underline;">Satellite
+                                    LaunchPad </label>
+                                <select name="launch_id" id="launch_id">
+                                    <option disabled selected>Seçiniz</option>
+                                @foreach($launchpad as $launchpads)
+                                        <option value="{{$launchpads->id}}">
+                                            {{$launchpads->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <label class="mb-1" for="image" style="text-decoration: underline;">Satellite
+                                    Image </label>
+                                <input type="file" name="image" id="image" class="form-control">
+
+                                <label class="mb-1" for="image2" style="text-decoration: underline;">Satellite
+                                    Detail Image </label>
+                                <input type="file" name="image2" id="image2" class="form-control">
 
                             </div>
 
@@ -85,6 +275,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Satellite Name</th>
+                            <th>Satellite Mission Name</th>
+                            <th>description</th>
+                            <th>Category</th>
+                            <th>Statu</th>
+                            <th>LaunchPad</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -94,6 +289,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Satellite Name</th>
+                            <th>Satellite Mission Name</th>
+                            <th>description</th>
+                            <th>Category</th>
+                            <th>Statu</th>
+                            <th>LaunchPad</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -209,7 +409,22 @@
 
         function updateSatellite(id) {
 
-            var category_name = $('#nameUpdate');
+            var name = $('#nameUpdate');
+            var mission_name = $('#mission_nameUpdate');
+            var link = $('#linkUpdate');
+            var launch_date = $('#launch_dateUpdate');
+            var complete_date = $('#complete_dateUpdate');
+            var altitude = $('#altitudeUpdate');
+            var inclination = $('#inclinationUpdate');
+            var instruments = $('#instrumentsUpdate');
+            var description = $('#descriptionUpdate');
+            var category_id = $('#category_idUpdate');
+            var status_id = $('#status_idUpdate');
+            var scientist_id = $('#scientist_idUpdate');
+            var scientist_id2 = $('#scientist_id2Update');
+            var launchpad_id = $('#launch_idUpdate');
+            var image = $('#imageUpdate');
+            var image2 = $('#image2Update');
 
             $.ajax({
                 type: 'GET',
@@ -217,7 +432,22 @@
                 data: {id: id},
                 success: function (data) {
 
-                    category_name.val(data.category_name);
+                    name.val(data.name);
+                    mission_name.val(data.mission_name);
+                    link.val(data.link);
+                    launch_date.val(data.launch_date);
+                    complete_date.val(data.complete_date);
+                    altitude.val(data.altitude);
+                    inclination.val(data.inclination);
+                    instruments.val(data.instruments);
+                    description.val(data.description);
+                    category_id.val(data.category_id);
+                    status_id.val(data.status_id);
+                    scientist_id.val(data.scientist_id);
+                    scientist_id2.val(data.scientist_id2);
+                    launchpad_id.val(data.launchpad_id);
+                    image.val(data.image);
+                    image2.val(data.image2);
 
                     $('#updateId').val(id);
 
@@ -264,6 +494,11 @@
             columns: [
                 {data: 'id'},
                 {data: 'name'},
+                {data: 'mission_name'},
+                {data: 'description'},
+                {data: 'category_id'},
+                {data: 'status_id'},
+                {data: 'launchpad_id'},
                 {data: 'update'},
                 {data: 'delete'},
             ]

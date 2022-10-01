@@ -14,4 +14,8 @@ class LaunchPad extends Model
     protected $fillable = [
 
     ];
+
+    public function getSatellite(){
+        return $this->hasOne('App\Models\Satellite','launch_id','id');
+    }
 }

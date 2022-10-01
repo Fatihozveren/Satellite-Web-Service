@@ -14,5 +14,9 @@ class Scientist extends Model
     protected $fillable = [
 
     ];
+
+    public function getSatellite(){
+        return $this->hasMany('App\Models\Satellite','scientist_id','id');
+    }
 }
 
