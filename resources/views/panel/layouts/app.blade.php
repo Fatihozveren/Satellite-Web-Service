@@ -85,7 +85,7 @@
         <div>
 
             <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
-                <a href="{{route('front.index')}}"  target="_blank" class="btn green" >Go to Page</a>
+                <a href=""  target="_blank" class="btn green" >Go to Page</a>
             </li>
 
         </div>
