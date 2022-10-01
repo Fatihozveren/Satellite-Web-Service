@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'panel'], function () {
+    Route::controller(\App\Http\Controllers\PanelController::class)->group(function () {
+        Route::get('/home', 'index')->name('panel.index');
+        });
+    });
+

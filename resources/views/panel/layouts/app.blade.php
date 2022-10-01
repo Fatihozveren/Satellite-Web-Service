@@ -88,10 +88,10 @@
             </li>
 
             <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
-                <a href="{{route('homepage')}}"  target="_blank" class="btn green" >Sayfaya Git</a>
+                <a href=""  target="_blank" class="btn green" >Sayfaya Git</a>
             </li>
             <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
-                <a href="{{route('logout')}}" class="btn red"  style="margin-left: 10px">Çıkış Yap</a>
+                <a href="" class="btn red"  style="margin-left: 10px">Çıkış Yap</a>
             </li>
         </div>
     </div>
@@ -112,86 +112,47 @@
         <ul class="menu">
 
             <li id="anasayfa" class="menuHomePage">
-                <a href="{{route('index')}}" title="Rol İşlemleri">
+                <a href="" title="Rol İşlemleri">
                     <i class="fas fa-home"></i>
                     <span>Ana Sayfa</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
             </li>
             <li>
-                <a href="{{route('list_event')}}" title="Forms">
-                    <i class="fas fa-calendar"></i>
-                    <span>Etkinlikler</span>
+                <a href="" title="Forms">
+                    <i class="fas fa-podcast"></i>
+                    <span>Satellites</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
 
             </li>
             <li>
-                <a href="{{route('educator_list')}}" title="Forms">
-                    <i class="fas fa-user"></i>
-                    <span>Eğitmenler</span>
+                <a href="" title="Forms">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Status</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
             </li>
 
             <li>
-                <a href="{{route('list_blog')}}" title="Forms">
-                    <i class="fas fa-pen-square"></i>
-                    <span>Blog</span>
-                    <i class="fas fa-caret-right"></i>
-                </a>
-
-            </li>
-
-            <li>
-                <a href="{{route('list_video')}}" title="Forms">
-                    <i class="fas fa-video"></i>
-                    <span>Video</span>
+                <a href="" title="Forms">
+                    <i class="fas fa-file"></i>
+                    <span>Categories</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
 
             </li>
 
             <li>
-                <a href="{{route('list_photo')}}" title="Forms">
-                    <i class="fas fa-camera"></i>
-                    <span>Fotoğraf</span>
+                <a href="" title="Forms">
+                    <i class="fas fa-address-card"></i>
+                    <span>Scientist</span>
                     <i class="fas fa-caret-right"></i>
                 </a>
-
-            </li>
-
-            <li>
-                <a title="Forms">
-                    <i class="fas fa-message"></i>
-                    <span>İletişim</span>
-                    <i class="fas fa-caret-right"></i>
-                </a>
-                <ul>
-                    <li class="menuPersonelInfo">
-                        <a href="{{route('contact_event')}}" title="form-1">
-                            <i class="fas fa-user"></i>
-                            <span>Etkinlik Başvuruları</span>
-                        </a>
-                    </li>
-                    <li class="menuPersonelData">
-                        <a href="{{route('contact_panel')}}" title="form-2">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Mesajlar </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="{{route('setting')}}" title="Forms">
-                    <i class="fas fa-cogs"></i>
-                    <span>Site Ayarları</span>
-                    <i class="fas fa-caret-right"></i>
-                </a>
-
 
             </li>
         </ul>
+
     </aside>
     <footer>
         <div style="margin-top: 15px">
