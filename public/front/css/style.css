@@ -1,0 +1,200 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none !important;
+}
+html{
+    width: 100vw;
+    overflow-x: hidden;
+    --purple:#93709B;
+    --blue:#236F93;
+}
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: black;
+}
+.nasaContainer{
+    max-width: 1480px;
+    margin: auto;
+}
+.linearText{
+    font-family: BungeeRegular;
+    font-weight: 400;
+    background: linear-gradient(90deg, #236F93 0%, #93709B 81.92%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@font-face {
+    font-family: BungeeHairline;
+    src: url("../fonts/BungeeHairline-Regular.ttf");
+}
+@font-face {
+    font-family: BungeeRegular;
+    src: url("../fonts/Bungee-Regular.ttf");
+}
+@font-face {
+    font-family: LatoBlack;
+    src: url("../fonts/Lato-Black.ttf");
+}
+@font-face {
+    font-family: LatoBold;
+    src: url("../fonts/Lato-Bold.ttf");
+}
+@font-face {
+    font-family: LatoLight;
+    src: url("../fonts/Lato-Light.ttf");
+}@font-face {
+    font-family: LatoRegular;
+    src: url("../fonts/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: LatoThin;
+    src: url("../fonts/Lato-Thin.ttf");
+}
+header{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+header .header-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+header .header-img img{
+    max-height: 45px;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    height: 100%;
+}
+header ul li{
+    position: relative;
+    transition: 400ms all;
+    display: flex;
+    justify-content: center;
+}
+header ul li a{
+    display: flex;
+    color: white;
+    justify-content: center;
+    letter-spacing: 3px;
+    position: relative;
+    font-weight: 900;
+    transition: 400ms all;
+    font-family: BungeeHairline;
+}
+header ul li:before{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 60%;
+    background-color: white;
+    bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms all;
+}
+header ul li:hover:before {
+    bottom: -5px;
+    opacity: 1;
+    visibility: visible;
+}
+header ul li:hover a {
+    letter-spacing: 4px;
+    color: white;
+}
+header ul li.active:before {
+    bottom: -5px;
+    opacity: 1;
+    visibility: visible;
+}
+.entrance{
+    position: relative;
+    padding-top: 80px;
+    height: 100vh;
+}
+.entrance>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    background-image: url("../../media/entrance.png");
+    opacity: .5;
+}
+.entrance>img:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    background-image: url("../../media/entrance.png");
+}
+.entrance .entrance-inner{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.entrance .entrance-inner>div{
+    width: 40%;
+}
+.entrance .entrance-inner .entrance-left{
+    display: flex;
+    width:30%;
+    gap: 30px;
+    flex-direction: column;
+}
+.entrance .entrance-inner .entrance-left h3{
+    font-family: BungeeRegular;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 53px;
+}
+.entrance .entrance-inner .entrance-left p{
+    font-family: LatoLight;
+    color: white;
+    max-width: 350px;
+    font-size: 20px;
+    line-height: 24px;
+}
+.entrance .entrance-inner .right{
+
+}
+.entrance .entrance-inner .right img{
+
+}
+.datas{
+    display: flex;
+    padding: 60px;
+    gap: 20px;
+}
+.datas .data{
+    clip-path: polygon(0% 0%, 86% 0%, 100% 10%, 100% 100%, 17% 100%, 0% 81%);
+    padding: 2px;
+}
+.datas .data h4{
+
+}
+.datas .data.big h4{
+
+}
+.datas .data.big h3{
+
+}
+.datas .data h3{
+
+}
+

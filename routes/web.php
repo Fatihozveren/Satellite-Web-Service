@@ -12,12 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::group(['prefix' => '/'], function () {
-    Route::controller(\App\Http\Controllers\front\FrontController::class)->group(function () {
-        Route::get('/', 'index')->name('front.index');
-    });
-});
+Route::get('/', function (){
+    return view("front.pages.home");
+})->name('front.home');
 
 
 Route::group(['prefix' => 'panel'], function () {
