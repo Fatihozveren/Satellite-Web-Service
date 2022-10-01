@@ -103,4 +103,3 @@ foreach ($trimmed_dizis as $key=>$value){
 
 
 }
-dd($status);

@@ -423,7 +423,7 @@ header ul li.active:before {
 }
 @media only screen and (max-width: 1500px) {
     .nasaContainer{
-        width: 95%;
+        width: 95% !important;
     }
     .future-satellites .other-satellites-slider{
         height: calc((100vw / 7) + 80px);
