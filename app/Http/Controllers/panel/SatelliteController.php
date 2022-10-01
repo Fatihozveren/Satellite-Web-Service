@@ -17,6 +17,7 @@ class SatelliteController extends Controller
 {
     public function create(Request $request)
     {
+
         $request->validate(
             [
                 "name" => "string|max:255",
@@ -28,12 +29,12 @@ class SatelliteController extends Controller
                 "inclination" => "numeric",
                 "instruments" => "string|max:255",
                 'image'=>'image|mimes:jpeg,png,jpg',
-                'image_2'=>'image|mimes:jpeg,png,jpg',
+                'image2'=>'image|mimes:jpeg,png,jpg',
                 "description" => "string",
                 "category_id" => ['nullable', Rule::exists(Category::class, "id")],
                 "status_id" => ['nullable', Rule::exists(Status::class, "id")],
                 "scientist_id" => ['nullable', Rule::exists(Scientist::class, "id")],
-                "launchpad_id" => ['nullable', Rule::exists(LaunchPad::class, "id")],
+                "launch_id" => ['nullable', Rule::exists(LaunchPad::class, "id")],
 
             ],
 
@@ -53,13 +54,21 @@ class SatelliteController extends Controller
         $satellite->scientist_id = \App\Helper\Helper::scriptStripper($request->scientist_id);
         $satellite->launchpad_id = \App\Helper\Helper::scriptStripper($request->launchpad_id);
 
-        if ($request->hasFile('image_2')){
-            $imageName2=$request->name.'2.'.$request->image_2->getClientOriginalExtension();
-            $request->image_2->move(public_path('uploads/images_2/'),$imageName2);
+        if ($request->hasFile('image2')){
+            $name=public_path('uploads/images2/');
+            if (!file_exists($name)) {
+                mkdir($name, 0700);
+            }
+            $imageName2=$request->name.'2.'.$request->image2->getClientOriginalExtension();
+            $request->image2->move(public_path('uploads/images2/'),$imageName2);
             $satellite->image_2 = $imageName2;
         }
 
         if ($request->hasFile('image')){
+            $name=public_path('uploads/images/');
+            if (!file_exists($name)) {
+                mkdir($name, 0700);
+            }
             $imageName=$request->name.'.'.$request->image->getClientOriginalExtension();
             $request->image->move(public_path('uploads/images/'),$imageName);
             $satellite->image = $imageName;
@@ -143,7 +152,7 @@ class SatelliteController extends Controller
             'category_id' => \App\Helper\Helper::scriptStripper($request->status_id),
             'status_id' => \App\Helper\Helper::scriptStripper($request->status_id),
             'scientist_id' => \App\Helper\Helper::scriptStripper($request->scientist_id),
-            'launchpad_id' => \App\Helper\Helper::scriptStripper($request->launchpad_id),
+            'launchpad_id' => \App\Helper\Helper::scriptStripper($request->launch_id),
             'image' => \App\Helper\Helper::scriptStripper($request->image),
             'image_2' => \App\Helper\Helper::scriptStripper($request->image_2),
 
