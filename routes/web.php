@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'panel'], function () {
-    Route::controller(\App\Http\Controllers\PanelController::class)->group(function () {
+    Route::controller(\App\Http\Controllers\panel\PanelController::class)->group(function () {
         Route::get('/home', 'index')->name('panel.index');
         });
     });
