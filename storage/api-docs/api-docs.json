@@ -5,13 +5,13 @@
         "version": "0.1"
     },
     "paths": {
-        "/api/sattelites/all_satellites": {
+        "/api/satellites/all_satellites": {
             "get": {
                 "tags": [
                     "Satellites"
                 ],
                 "description": "Get all satellites information",
-                "operationId": "4013dbb23f35e70dd3d7926a033b76b2",
+                "operationId": "6cab67a0f0a48d1af1a58795f096662a",
                 "responses": {
                     "200": {
                         "description": "Ok"
@@ -41,6 +41,78 @@
                 "parameters": [
                     {
                         "name": "launchpad_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/categories_satellites": {
+            "get": {
+                "tags": [
+                    "Satellites"
+                ],
+                "description": "Get satellites by category id",
+                "operationId": "7db5570622c0d41df2e5358b99e61709",
+                "parameters": [
+                    {
+                        "name": "category_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/status_satellites": {
+            "get": {
+                "tags": [
+                    "Satellites"
+                ],
+                "description": "Get satellites by status id",
+                "operationId": "c77dea0789ffaca4b6ab7208d23cd02d",
+                "parameters": [
+                    {
+                        "name": "status_id",
                         "in": "query",
                         "required": true,
                         "schema": {

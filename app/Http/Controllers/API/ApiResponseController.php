@@ -19,7 +19,7 @@ class ApiResponseController extends BaseController
     /**
      * @OA\Get (
      *     tags={"Satellites"},
-     *     path="/api/sattelites/all_satellites",
+     *     path="/api/satellites/all_satellites",
      *     description="Get all satellites information",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="400", description="Bad Request"),
@@ -69,6 +69,80 @@ class ApiResponseController extends BaseController
     public function getLaunchpadSatellites(Request $request)
     {
         $satellites = Satellite::where('launchpad_id', $request->launchpad_id)->get();
+        if ( count($satellites) > 0) {
+            return $this->sendResponse(
+                $satellites,
+                ResponseCodes::getSuccessMessages('OK')
+            );
+        } else {
+            return $this->sendError(
+                'Satellites data can not found',
+                ResponseCodes::getErrorMessages('REQUIRED_PARAMETER'),
+                ResponseCodes::NOT_FOUND);
+        }
+    }
+
+    /**
+     * @OA\Get (
+     *     tags={"Satellites"},
+     *     path="/api/categories_satellites",
+     *     description="Get satellites by category id",
+     *     @OA\Parameter(
+     *      name="category_id",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *      ),
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="401", description="Unauthorized"),
+     *     @OA\Response(response="404", description="Not Found"),
+     *     @OA\Response(response="500", description="Server Error"),
+     * )
+     */
+
+    public function getCategorySatellites(Request $request)
+    {
+        $satellites = Satellite::where('category_id', $request->category_id)->get();
+        if ( count($satellites) > 0) {
+            return $this->sendResponse(
+                $satellites,
+                ResponseCodes::getSuccessMessages('OK')
+            );
+        } else {
+            return $this->sendError(
+                'Satellites data can not found',
+                ResponseCodes::getErrorMessages('REQUIRED_PARAMETER'),
+                ResponseCodes::NOT_FOUND);
+        }
+    }
+
+    /**
+     * @OA\Get (
+     *     tags={"Satellites"},
+     *     path="/api/status_satellites",
+     *     description="Get satellites by status id",
+     *     @OA\Parameter(
+     *      name="status_id",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *      ),
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="401", description="Unauthorized"),
+     *     @OA\Response(response="404", description="Not Found"),
+     *     @OA\Response(response="500", description="Server Error"),
+     * )
+     */
+
+    public function getStatusSatellites(Request $request)
+    {
+        $satellites = Satellite::where('status_id', $request->status_id)->get();
         if ( count($satellites) > 0) {
             return $this->sendResponse(
                 $satellites,
