@@ -41,9 +41,9 @@ class CategoryController extends Controller
         $categories = Category::all();
         return DataTables::of($categories)
             ->addColumn('update', function ($data) {
-                return "<button onclick='updateCategory(" . $data->id . ")' class='btn btn-warning'>Güncelle</button>";
+                return "<button onclick='updateCategory(" . $data->id . ")' class='btn btn-warning'>Update</button>";
             })->addColumn('delete', function ($data) {
-                return "<button onclick='deleteCategory(" . $data->id . ")' class='btn btn-danger'>Sil</button>";
+                return "<button onclick='deleteCategory(" . $data->id . ")' class='btn btn-danger'>Delete</button>";
             })
             ->rawColumns(['update', 'delete'])
             ->make(true);

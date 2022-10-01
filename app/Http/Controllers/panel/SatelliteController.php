@@ -94,9 +94,9 @@ class SatelliteController extends Controller
         $satellites = Satellite::all();
         return DataTables::of($satellites)
             ->addColumn('update', function ($data) {
-                return "<button onclick='updateSatellite(" . $data->id . ")' class='btn btn-warning'>Güncelle</button>";
+                return "<button onclick='updateSatellite(" . $data->id . ")' class='btn btn-warning'>Update</button>";
             })->addColumn('delete', function ($data) {
-                return "<button onclick='deleteSatellite(" . $data->id . ")' class='btn btn-danger'>Sil</button>";
+                return "<button onclick='deleteSatellite(" . $data->id . ")' class='btn btn-danger'>Delete</button>";
             })
             ->rawColumns(['update', 'delete'])
             ->make(true);

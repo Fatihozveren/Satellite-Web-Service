@@ -122,8 +122,8 @@
                     </form>
                 </div>
                 <div class="modal-footer" style="background-color: #E5E8E8;">
-                    <button type="button" class="btn btn-primary" onclick="updateSatellitePost()">Kaydet</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button type="button" class="btn btn-primary" onclick="updateSatellitePost()">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetModal()" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -250,8 +250,8 @@
                     </form>
                 </div>
                 <div class="modal-footer" style="background-color: #E5E8E8;">
-                    <button type="button" onclick="createSatellite()" class="btn btn-primary">Kaydet</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button type="button" onclick="createSatellite()" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetModal()" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -558,5 +558,10 @@
         setTimeout(()=>{
             $("#sidebar-menu-one").addClass("show")
         },1000)
+    </script>
+    <script>
+        function resetModal() {
+            document.getElementById("create_satellite").reset();
+        }
     </script>
 @endsection

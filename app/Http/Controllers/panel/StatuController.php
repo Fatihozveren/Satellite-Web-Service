@@ -37,9 +37,9 @@ class StatuController extends Controller
         $status = Status::all();
         return DataTables::of($status)
             ->addColumn('update', function ($data) {
-                return "<button onclick='updateStatu(" . $data->id . ")' class='btn btn-warning'>Güncelle</button>";
+                return "<button onclick='updateStatu(" . $data->id . ")' class='btn btn-warning'>Update</button>";
             })->addColumn('delete', function ($data) {
-                return "<button onclick='deleteStatu(" . $data->id . ")' class='btn btn-danger'>Sil</button>";
+                return "<button onclick='deleteStatu(" . $data->id . ")' class='btn btn-danger'>Delete</button>";
             })
             ->rawColumns(['update', 'delete'])
             ->make(true);

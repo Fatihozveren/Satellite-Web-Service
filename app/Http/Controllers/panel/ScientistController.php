@@ -41,9 +41,9 @@ class ScientistController extends Controller
         $scientist = Scientist::all();
         return DataTables::of($scientist)
             ->addColumn('update', function ($data) {
-                return "<button onclick='updateScientist(" . $data->id . ")' class='btn btn-warning'>Güncelle</button>";
+                return "<button onclick='updateScientist(" . $data->id . ")' class='btn btn-warning'>Update</button>";
             })->addColumn('delete', function ($data) {
-                return "<button onclick='deleteScientist(" . $data->id . ")' class='btn btn-danger'>Sil</button>";
+                return "<button onclick='deleteScientist(" . $data->id . ")' class='btn btn-danger'>Delete</button>";
             })
             ->rawColumns(['update', 'delete'])
             ->make(true);

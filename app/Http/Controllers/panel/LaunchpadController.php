@@ -39,9 +39,9 @@ class LaunchpadController extends Controller
         $launchpad = LaunchPad::all();
         return DataTables::of($launchpad)
             ->addColumn('update', function ($data) {
-                return "<button onclick='updateLaunchpad(" . $data->id . ")' class='btn btn-warning'>Güncelle</button>";
+                return "<button onclick='updateLaunchpad(" . $data->id . ")' class='btn btn-warning'>Update</button>";
             })->addColumn('delete', function ($data) {
-                return "<button onclick='deleteLaunchpad(" . $data->id . ")' class='btn btn-danger'>Sil</button>";
+                return "<button onclick='deleteLaunchpad(" . $data->id . ")' class='btn btn-danger'>Delete</button>";
             })
             ->rawColumns(['update', 'delete'])
             ->make(true);
