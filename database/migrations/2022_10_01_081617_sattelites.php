@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('mission_name')->nullable();
             $table->string('link')->nullable();
             $table->string('launch_date')->nullable();
-            $table->string('launch_location')->nullable();
             $table->string('complete_date')->nullable();
             $table->string('altitude')->nullable();
             $table->string('inclination')->nullable();
@@ -31,10 +30,12 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('scientist_id');
+            $table->unsignedBigInteger('launch_id')->nullable();
             $table->timestamps();
             $table->foreign('scientist_id')->references('id')->on('scientists');
             $table->foreign('status_id')->references('id')->on('status');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('launch_id')->references('id')->on('launchpad');
 
         });
     }
