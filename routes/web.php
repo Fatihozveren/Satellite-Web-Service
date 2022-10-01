@@ -67,3 +67,40 @@ Route::group(['prefix' => '/launchpad'], function () {
     Route::post('/update', [\App\Http\Controllers\panel\LaunchpadController::class, 'update'])->name('launchpad.update');
 });
 
+$istemci = curl_init();
+curl_setopt($istemci, CURLOPT_REFERER, "https://eospso.nasa.gov/missions/aqua");
+curl_setopt($istemci, CURLOPT_URL, "https://eospso.nasa.gov/missions/aqua");
+curl_setopt($istemci, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 OPR/73.0.3856.415");
+curl_setopt($istemci, CURLOPT_RETURNTRANSFER, 1);
+$ham_veri = curl_exec($istemci);
+$ham_veri = trim($ham_veri);
+$dizis=explode("        ", $ham_veri);
+$trimmed_dizis = array_map('trim', $dizis);
+$trimmed_dizis = array_map(function($trimmed_dizis){
+    return trim(strip_tags($trimmed_dizis));
+}, $trimmed_dizis);
+$trimmed_dizis=array_filter($trimmed_dizis);
+$status=null;
+$index2=null;
+$status_index=null;
+
+foreach ($trimmed_dizis as $key=>$value){
+
+    if ($value=='Status:'){
+        $status_index=$key;
+    }
+
+
+    if (!is_null($status_index) && $key >= $status_index ){
+        if ($value=='Mission Category:' || $value=='Launch Date:' || $value=='Launch Location:'
+            || $value=='Designed Life:'){
+            $status_index==null;
+            break;
+        }
+        $status=$status.' '.$value;
+    }
+
+
+
+}
+dd($status);
