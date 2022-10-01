@@ -1,0 +1,93 @@
+html{
+    --color1: #111111 !important;
+    --color2: #1457D7 !important;
+    --color3: white !important;
+    --color4: #252525 !important;
+    --iconColor: #222222 !important;
+    --iconText: white  !important;
+    --animateColor: #222222 !important;
+}
+body {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0;
+}
+.loginModal {
+    position: fixed;
+    margin: auto;
+    display: flex;
+    width: 90vw;
+    max-width: 550px;
+    flex-direction: column;
+    align-items: center;
+}
+.form-control {
+    display: block;
+    padding: 6px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-clip: padding-box;
+    height: 50px;
+    border: 1px solid var(--iconColor);
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    width: 350px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    color: var(--color3) !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 100;
+    background: transparent;
+}
+.form-control:hover, .form-control:focus {
+    background: transparent;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: var(--color3);
+}
+.form-control::placeholder{
+    color: var(--color3) !important;
+}
+.form-control[type="submit"]{
+    background-color: var(--color2);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.loginModal h2{
+    font-size: 56px;
+    font-weight: 900!important;
+    color: var(--color2);
+    text-transform: uppercase;
+    margin: 0;
+    font-family: 'Poppins', sans-serif !important;
+    margin-bottom: 25px;
+    width: max-content;
+}
+.loginModal h2 span{
+    color: var(--color3) !important;
+}
+@media only screen and (max-width: 850px){
+    .triangle{
+        display:none;
+    }
+    .loginModal h2 {
+        font-size: 45px;
+        margin: auto;
+        width: 90%;
+    }
+    .form-control {
+        width: 90%;
+        margin: auto;
+    }
+}

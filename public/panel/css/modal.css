@@ -1,0 +1,184 @@
+.modal-space{
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    z-index: 10;
+    background-color: rgba(83, 167, 216, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms all;
+}
+.modal-space .my-modal{
+    background-color: white;
+    width: 50%;
+    margin-left: 200vw;
+    border-radius: 20px;
+    min-width: 630px;
+    transition: 400ms all;
+}
+.modal-space.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal-space.active .my-modal{
+    margin-left: 0;
+}
+.modal-space .my-modal .modal-header{
+    padding: 1.5vh 3vh;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.modal-space .my-modal .modal-header i{
+    font-size: 25px;
+    cursor: pointer;
+    transition: 400ms all;
+}
+.modal-space .my-modal .modal-header i:hover{
+    transform: rotate(360deg);
+}
+.modal-space .my-modal .modal-header h4{
+    font-size: 20px;
+    color: #444444;
+}
+.modal-space .my-modal .modal-body{
+    padding: 1vh 5vh;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.modal-space .my-modal .modal-body::-webkit-scrollbar {
+    width: 8px;
+    background-color: #ffffff;
+}
+.modal-space .my-modal .modal-body::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: #3B3B3B;
+}
+.modal-space .my-modal .modal-body div{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+    width: 48%;
+}
+.modal-space .my-modal .modal-body div.modal-image{
+    display: flex;
+    justify-content: center;
+}
+.modal-space .my-modal .modal-body .clocks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modal-space .my-modal .modal-body .clocks button{
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: #1890FF;
+    border: 1px solid #767676;
+    color: white;
+    transition: 500ms all;
+    cursor: pointer;
+}
+.modal-space .my-modal .modal-body .clocks button:hover{
+    background-color: #EFEFEF;
+    border: 1px solid #767676;
+    color: black;
+}
+.modal-space .my-modal .modal-body .clocks button.disabled{
+    background-color: #EFEFEF;
+    border: 1px solid #767676;
+    color: black;
+}
+.modal-space .my-modal .modal-body .clocks button.selected{
+    background-color: rgba(239, 239, 239, 0.14);
+    border: 1px solid #767676;
+    color: black;
+}
+.modal-space .my-modal .modal-body div img{
+    height: 150px;
+}
+.modal-space .my-modal .modal-footer{
+    padding: 1.5vh 3vh;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.modal-space .my-modal .modal-footer button,
+.modal-space .my-modal .modal-footer a{
+    background-color: #c9353b;
+    color: white;
+    border: 1px solid #c9353b;
+    padding: 5px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 600ms all;
+}
+.modal-space .my-modal .modal-footer button:first-child,
+.modal-space .my-modal .modal-footer a:first-child{
+    background-color: #1ECD97;
+    margin-right: 15px;
+    border: 1px solid #1ECD97;
+}
+.modal-space .my-modal .modal-footer button:hover,
+.modal-space .my-modal .modal-footer a:hover{
+    color: #c9353b;
+    border: 1px solid #c9353b;
+    background-color: rgba(255, 255, 255, 0);
+}
+.modal-space .my-modal .modal-footer button:first-child:hover,
+.modal-space .my-modal .modal-footer a:first-child:hover{
+    color: #1ECD97;
+    border: 1px solid #1ECD97;
+    background-color: rgba(255, 255, 255, 0);
+}
+.modal-footer, .modal-header{
+    border: none;
+}
+.large .my-modal{
+    width: 50%;
+    min-width: 1024px;
+}
+.small .my-modal{
+    width: 35%;
+}
+.small .my-modal .modal-body {
+    outline: none;
+}
+.small .my-modal .modal-body{
+    padding-bottom: 1vh;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+}
+.modal-body input, .modal-body select{
+    border: 1px solid #939393;
+    height: 27px;
+    border-radius: 8px;
+    padding: 0 5px;
+}
+.modal-body select option:hover{
+    background-color: white;
+}
+
+.modal-body select option{
+    padding: 5px;
+}
+
+.modal-body textarea{
+    height: 5vh;
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 5px 0px #00000012;
+    border-radius: 8px;
+    padding: 10px;
+}

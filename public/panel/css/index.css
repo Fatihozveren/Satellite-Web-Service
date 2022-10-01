@@ -1,0 +1,364 @@
+/*
+* reset values
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+*:focus {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/*
+* roots
+*/
+/* colors */
+/* size */
+/*
+* fonts
+*/
+/*
+* html
+* body
+*/
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", "Poppins", -apple-system, sans-serif !important;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #dcdcde;
+  border-bottom: 2px solid rgba(44, 51, 56, 0.44);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5em;
+}
+header .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5em;
+  height: 100%;
+  flex: 2;
+}
+header .left a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  flex: 1;
+}
+header .left a img {
+  height: 100%;
+}
+header .left .page-title {
+  flex: 1;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #2c3338;
+  text-align: center;
+}
+header .right {
+  flex: 1;
+}
+header .right .user-content {
+  position: relative;
+  float: right;
+}
+header .right .user-content:hover .user-detail-menus {
+  padding-top: 15px;
+  opacity: 1;
+  visibility: visible;
+  user-select: auto;
+}
+header .right .user-content .user-infos {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  align-items: center;
+  cursor: pointer;
+}
+header .right .user-content .user-infos .user-image img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border: 2px solid rgba(44, 51, 56, 0.44);
+}
+header .right .user-content .user-detail-menus {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 0;
+  width: 230px;
+  background-color: transparent;
+  opacity: 0;
+  visibility: hidden;
+  user-select: none;
+  transition: 200ms all;
+}
+header .right .user-content .user-detail-menus ul {
+  width: 100%;
+  background-color: #dcdcde;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(44, 51, 56, 0.44);
+}
+header .right .user-content .user-detail-menus ul li {
+  padding: 0 5px;
+  border-bottom: 1px solid rgba(44, 51, 56, 0.44);
+  transition: 300ms background-color;
+}
+header .right .user-content .user-detail-menus ul li:last-child {
+  border-bottom: none;
+}
+header .right .user-content .user-detail-menus ul li:hover {
+  background-color: #646970;
+}
+header .right .user-content .user-detail-menus ul li:hover a {
+  color: white;
+}
+header .right .user-content .user-detail-menus ul li a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #2c3338;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 5px;
+}
+header .right .user-content .user-detail-menus ul li a i {
+  font-size: 1.1em;
+}
+
+/* main */
+main {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: transparent;
+  display: flex !important;
+}
+main #sidebar {
+  width: 240px;
+  background-color: #dcdcde;
+  height: 100%;
+  transition: 300ms width;
+}
+main #sidebar aside {
+  width: 100%;
+  height: calc(100% - 80px);
+  overflow: hidden;
+  color: #2c3338;
+  font-size: 1em;
+  font-weight: 600;
+  transition: 300ms height;
+}
+main #sidebar aside .menu-title {
+  padding: 15px;
+  width: 100%;
+  border-bottom: 1px solid rgba(44, 51, 56, 0.44);
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+main #sidebar aside .menu-title div.menu-bar {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main #sidebar aside .menu-title div.menu-bar span {
+  display: block;
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2c3338;
+  position: relative;
+}
+main #sidebar aside .menu-title div.menu-bar span::before, main #sidebar aside .menu-title div.menu-bar span::after {
+  content: "";
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2c3338;
+  position: absolute;
+  right: 0;
+  top: -7px;
+  transition: 300ms all;
+}
+main #sidebar aside .menu-title div.menu-bar span::after {
+  top: inherit;
+  bottom: -7px;
+  transition: 300ms all;
+}
+main #sidebar aside ul.menu {
+  width: 100%;
+  padding: 0;
+  height: calc(100% - 46px);
+  overflow-y: auto;
+}
+main #sidebar aside ul.menu::-webkit-scrollbar {
+  width: 0;
+}
+main #sidebar aside ul.menu .active:not(i) {
+  background-color: #646970;
+}
+main #sidebar aside ul.menu li {
+  width: 100%;
+  color: #464646;
+  transition: 300ms background-color;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+main #sidebar aside ul.menu li i {
+  margin-right: 17px;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+main #sidebar aside ul.menu li a {
+  color: #2c3338;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: 300ms all;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+main #sidebar aside ul.menu li a > .fa-caret-right {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: none;
+  transition: 300ms transform;
+}
+main #sidebar aside ul.menu li a.active {
+  border-left: 10px solid white;
+  color: white;
+}
+main #sidebar aside ul.menu li a.active > .fa-caret-right {
+  transform: rotate(-90deg);
+}
+main #sidebar aside ul.menu li:hover {
+  background-color: #646970;
+}
+main #sidebar aside ul.menu li:hover a {
+  color: white;
+}
+main #sidebar aside ul.menu li ul {
+  width: 100%;
+  background-color: #646970;
+  display: none;
+  border-left: 5px solid white;
+  padding: 0;
+}
+main #sidebar aside ul.menu li ul li {
+  border-bottom: 1px solid rgba(44, 51, 56, 0.44);
+}
+main #sidebar aside ul.menu li ul li:first-child {
+  border-top: 1px solid rgba(44, 51, 56, 0.44);
+}
+main #sidebar aside ul.menu li ul li:hover {
+  background-color: #646970;
+}
+main #sidebar aside ul.menu li ul li a {
+  color: white;
+}
+main #sidebar aside ul.menu li ul li:hover {
+  background-color: #3c434a;
+}
+main #sidebar footer {
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid rgba(44, 51, 56, 0.44);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms height;
+}
+main #sidebar footer a {
+  color: #2c3338;
+  text-align: center;
+  display: block;
+  transition: 250ms all;
+  text-decoration: none;
+}
+main #sidebar footer a:hover {
+  text-decoration: none;
+  color: white;
+}
+main #content {
+  padding: 20px;
+  width: calc(100vw - 240px);
+  transition: 300ms width;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden auto;
+  background-image: url(../images/pattern.png);
+  background-repeat: repeat;
+  background-size: 170px;
+}
+main.close-menu #sidebar {
+  width: 50px;
+  overflow-x: hidden;
+}
+main.close-menu #sidebar a > .fa-caret-right {
+  opacity: 0;
+}
+main.close-menu #sidebar .menu-title > .menu-bar > span::before, main.close-menu #sidebar .menu-title > .menu-bar > span::after {
+  height: 4px;
+  border-radius: 2px;
+  width: 15px;
+  transform: rotate(45deg);
+  top: -4px;
+  right: -3px;
+}
+main.close-menu #sidebar .menu-title > .menu-bar > span::after {
+  transform: rotate(-45deg);
+  bottom: -4px;
+  top: inherit;
+}
+main.close-menu #sidebar aside {
+  height: 100%;
+}
+main.close-menu #sidebar footer {
+  height: 0;
+  overflow: hidden;
+}
+main.close-menu #content {
+  width: calc(100vw - 50px);
+}
+
+/*# sourceMappingURL=index.css.map */
