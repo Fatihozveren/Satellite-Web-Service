@@ -8,6 +8,6 @@ use function view;
 class PanelController extends Controller
 {
     public function index(){
-        return view('panel.layouts.app');
+        return view('panel.homepage');
     }
 }

@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => '/'], function () {
+    Route::controller(\App\Http\Controllers\front\FrontController::class)->group(function () {
+        Route::get('/', 'index')->name('front.index');
+    });
 });
+
 
 Route::group(['prefix' => 'panel'], function () {
     Route::controller(\App\Http\Controllers\panel\PanelController::class)->group(function () {
