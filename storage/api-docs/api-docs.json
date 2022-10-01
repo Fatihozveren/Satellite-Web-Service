@@ -1,0 +1,87 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Satellite Web Service",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/sattelites/all_satellites": {
+            "get": {
+                "tags": [
+                    "Satellite"
+                ],
+                "description": "Get all satellites information",
+                "operationId": "4013dbb23f35e70dd3d7926a033b76b2",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/categories/all_categories": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "description": "Get all categories information",
+                "operationId": "dacf011826cf5fb78b361ed01f03d429",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/all_status": {
+            "get": {
+                "tags": [
+                    "Status"
+                ],
+                "description": "Get all status information",
+                "operationId": "39a1424d3497719e7dafb2bb22048526",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        }
+    }
+}
