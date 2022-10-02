@@ -1,14 +1,34 @@
 @extends("front.layouts.app")
 @section("content")
     <style>
-        body{
-            background-image: url({{asset("media/Detay.jpeg")}});
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-        .back2{
+        .satellite-item{
             display: none;
+        }
+        .satellite-item.active{
+            display: block;
+        }
+        .satellite-search{
+            width: 100%;
+            max-width: 600px;
+        }
+        .satellite-search input {
+            border-radius: 0;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border: 1px solid white;
+            color: white;
+            background: #ffffff2b;
+        }
+        .about-title h3{
+            font-family: BungeeHairline;
+            font-weight: 800;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-size: 50px;
+            margin-top: 30px;
         }
     </style>
     <section class="about">
@@ -17,7 +37,7 @@
                 <h3>about</h3>
             </div>
             <div class="satellite-search">
-                <input type="search" placeholder="about search">
+                <input type="search" placeholder="Search in About" id="about-search">
             </div>
         </div>
     </section>
@@ -38,8 +58,8 @@
                         <p>ELDEK</p>
                     </div>
                     <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Yazılım Mühendisliği</p>
+                        <h5>Profession:</h5>
+                        <p>Software Engineering</p>
                     </div>
                 </div>
             </div>
@@ -57,8 +77,8 @@
                         <p>UÇAR</p>
                     </div>
                     <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Yazılım Mühendisliği</p>
+                        <h5>Profession:</h5>
+                        <p>Software Engineering</p>
                     </div>
                 </div>
             </div>
@@ -76,8 +96,8 @@
                         <p>ÖZVEREN</p>
                     </div>
                     <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Yazılım Mühendisliği</p>
+                        <h5>Profession:</h5>
+                        <p>Software Engineering</p>
                     </div>
                 </div>
             </div><div class="about-item">
@@ -94,8 +114,8 @@
                         <p>AKSOY</p>
                     </div>
                     <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Yazılım Mühendisliği</p>
+                        <h5>Profession:</h5>
+                        <p>Software Engineering</p>
                     </div>
                 </div>
             </div>
@@ -113,8 +133,8 @@
                         <p>YÜCEL</p>
                     </div>
                     <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Yazılım Mühendisliği</p>
+                        <h5>Profession:</h5>
+                        <p>Software Engineering</p>
                     </div>
                 </div>
             </div>
@@ -132,8 +152,8 @@
                         <p>GEÇİCİ</p>
                     </div>
                     <div class="about-project">
-                        <h5>Bölüm:</h5>
-                        <p>Yazılım Mühendisliği</p>
+                        <h5>Profession:</h5>
+                        <p>Software Engineering</p>
                     </div>
                 </div>
             </div>
@@ -141,4 +161,23 @@
 
         </div>
     </section>
+@endsection
+@section("scripts")
+    <script>
+        var satellites = $(".about-name h5");
+        $(document).ready(function() {
+            $("#about-search").keyup(function(event) {
+                var search = $("#about-search").val().toUpperCase();
+                satellites.each(function( index ) {
+                    if((satellites[index].innerHTML.toUpperCase()).indexOf(search)> -1){
+                        satellites[index].parentElement.parentElement.parentElement.classList.add("active");
+                    }
+                    else{
+                        satellites[index].parentElement.parentElement.parentElement.classList.remove("active");
+                    }
+                });
+
+            });
+        });
+    </script>
 @endsection

@@ -20,7 +20,7 @@
             color: white;
             background: #ffffff2b;
         }
-        .satellite-title h3{
+        .scientist-title h3{
             font-family: BungeeHairline;
             font-weight: 800;
             text-align: center;
@@ -32,8 +32,14 @@
         .scientist-item{
             display: none;
         }
+        .scientist-items {
+            margin-top: 60px;
+        }
         .scientist-item.active{
-            display: block;
+            display: flex;
+            height: max-content;
+            padding: 40px 30px;
+            clip-path: polygon(0% 0%, 90% 0%, 100% 20%, 100% 100%, 10% 100%, 0% 80%);
         }
     </style>
     <section class="scientist">
@@ -42,7 +48,7 @@
                 <h3>SCIENTIST</h3>
             </div>
             <div class="satellite-search">
-                <input type="search" placeholder="Scientist search" id="scientist-search" >
+                <input type="search" placeholder="Search in Scientist" id="scientist-search" >
             </div>
         </div>
     </section>
