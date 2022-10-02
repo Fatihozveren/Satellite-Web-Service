@@ -51,60 +51,25 @@
                                     Description </label>
                                 <textarea type="text" name="description" id="descriptionUpdate" class="form-control"></textarea>
 
-                                <label class="mb-1" for="category_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="category" style="text-decoration: underline;">Satellite
                                     Category </label>
-                                <select name="category_id" id="category_idUpdate">
-                                    <option disabled selected>Seçiniz</option>
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}">
-                                            {{$category->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="category" id="categoryUpdate" class="form-control">
 
-                                <label class="mb-1" for="status_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="status" style="text-decoration: underline;">Satellite
                                     Statu </label>
-                                <select name="status_id" id="status_idUpdate">
-                                    <option disabled selected>Seçiniz</option>
-                                    @foreach($status as $statu)
-                                        <option value="{{$statu->id}}">
-                                            {{$statu->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="status" id="statusUpdate" class="form-control">
 
-                                <label class="mb-1" for="scientist_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="scientist" style="text-decoration: underline;">Satellite
                                     Scientist </label>
-                                <select name="scientist_id" id="scientist_idUpdate">
-                                    <option disabled selected>Seçiniz</option>
-                                    @foreach($scientist as $scientists)
-                                        <option value="{{$scientists->id}}">
-                                            {{$scientists->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="scientist" id="scientistUpdate" class="form-control">
 
-                                <label class="mb-1" for="scientist_id2" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="scientist2" style="text-decoration: underline;">Satellite
                                     Scientist </label>
-                                <select name="scientist_id2" id="scientist_id2Update">
-                                    <option disabled selected>Seçiniz</option>
-                                    @foreach($scientist as $scientists)
-                                        <option value="{{$scientists->id}}">
-                                            {{$scientists->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="scientist2" id="scientist2Update" class="form-control">
 
-                                <label class="mb-1" for="launchpad_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="launch_location" style="text-decoration: underline;">Satellite
                                     LaunchPad </label>
-                                <select name="launchpad_id" id="launch_idUpdate">
-                                    <option disabled selected>Seçiniz</option>
-                                    @foreach($launchpad as $launchpads)
-                                        <option value="{{$launchpads->id}}">
-                                            {{$launchpads->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="launch_location" id="launchUpdate" class="form-control">
 
                                 <label class="mb-1" for="image" style="text-decoration: underline;">Satellite
                                     Image </label>
@@ -181,60 +146,25 @@
                                     Description </label>
                                 <textarea type="text" name="description" id="description" class="form-control"></textarea>
 
-                                <label class="mb-1" for="category_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="category" style="text-decoration: underline;">Satellite
                                     Category </label>
-                                <select name="category_id" id="category_id">
-                                    <option disabled selected>Seçiniz</option>
-                                @foreach($categories as $category)
-                                        <option value="{{$category->id}}">
-                                            {{$category->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="category" id="category" class="form-control">
 
-                                <label class="mb-1" for="status_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="status" style="text-decoration: underline;">Satellite
                                     Statu </label>
-                                <select name="status_id" id="status_id">
-                                    <option disabled selected>Seçiniz</option>
-                                @foreach($status as $statu)
-                                        <option value="{{$statu->id}}">
-                                            {{$statu->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="status" id="status" class="form-control">
 
-                                <label class="mb-1" for="scientist_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="scientist" style="text-decoration: underline;">Satellite
                                     Scientist </label>
-                                <select name="scientist_id" id="scientist_id">
-                                    <option disabled selected>Seçiniz</option>
-                                @foreach($scientist as $scientists)
-                                        <option value="{{$scientists->id}}">
-                                            {{$scientists->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="scientist" id="scientist" class="form-control">
 
-                                <label class="mb-1" for="scientist_id2" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="scientist2" style="text-decoration: underline;">Satellite
                                     Scientist </label>
-                                <select name="scientist_id2" id="scientist_id2">
-                                    <option disabled selected>Seçiniz</option>
-                                @foreach($scientist as $scientists)
-                                        <option value="{{$scientists->id}}">
-                                            {{$scientists->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="scientist2" id="scientist2" class="form-control">
 
-                                <label class="mb-1" for="launchpad_id" style="text-decoration: underline;">Satellite
+                                <label class="mb-1" for="launch_location" style="text-decoration: underline;">Satellite
                                     LaunchPad </label>
-                                <select name="launchpad_id" id="launchpad_id">
-                                    <option disabled selected>Seçiniz</option>
-                                @foreach($launchpad as $launchpads)
-                                        <option value="{{$launchpads->id}}">
-                                            {{$launchpads->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="launch_location" id="launch_location" class="form-control">
 
                                 <label class="mb-1" for="image" style="text-decoration: underline;">Satellite
                                     Image </label>
@@ -418,11 +348,11 @@
             var inclination = $('#inclinationUpdate');
             var instruments = $('#instrumentsUpdate');
             var description = $('#descriptionUpdate');
-            var category_id = $('#category_idUpdate');
-            var status_id = $('#status_idUpdate');
-            var scientist_id = $('#scientist_idUpdate');
-            var scientist_id2 = $('#scientist_id2Update');
-            var launchpad_id = $('#launch_idUpdate');
+            var category = $('#categoryUpdate');
+            var status = $('#statusUpdate');
+            var scientist = $('#scientistUpdate');
+            var scientist2 = $('#scientist2Update');
+            var launch_location = $('#launchUpdate');
             var image = $('#imageUpdate');
             var image2 = $('#image2Update');
 
@@ -441,11 +371,11 @@
                     inclination.val(data.inclination);
                     instruments.val(data.instruments);
                     description.val(data.description);
-                    category_id.val(data.category_id);
-                    status_id.val(data.status_id);
-                    scientist_id.val(data.scientist_id);
-                    scientist_id2.val(data.scientist_id2);
-                    launchpad_id.val(data.launchpad_id);
+                    category.val(data.category);
+                    status.val(data.status);
+                    scientist.val(data.scientist);
+                    scientist2.val(data.scientist2);
+                    launch_location.val(data.launch_location);
                     image.val(data.image);
                     image2.val(data.image2);
 
@@ -496,9 +426,9 @@
                 {data: 'name'},
                 {data: 'mission_name'},
                 {data: 'description'},
-                {data: 'category_id'},
-                {data: 'status_id'},
-                {data: 'launchpad_id'},
+                {data: 'category'},
+                {data: 'status'},
+                {data: 'launch_location'},
                 {data: 'update'},
                 {data: 'delete'},
             ]

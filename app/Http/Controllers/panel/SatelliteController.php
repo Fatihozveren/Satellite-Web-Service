@@ -31,11 +31,11 @@ class SatelliteController extends Controller
                 'image'=>'image|mimes:jpeg,png,jpg',
                 'image2'=>'image|mimes:jpeg,png,jpg',
                 "description" => "string",
-                "category_id" => ['nullable', Rule::exists(Category::class, "id")],
-                "status_id" => ['nullable', Rule::exists(Status::class, "id")],
-                "scientist_id" => ['nullable', Rule::exists(Scientist::class, "id")],
-                "launch_id" => ['nullable', Rule::exists(LaunchPad::class, "id")],
-
+                "category" => "string",
+                "status" => "string",
+                "scientist" => "string",
+                "scientist2" => "string",
+                "launch_location" => "string",
             ],
 
         );
@@ -49,10 +49,10 @@ class SatelliteController extends Controller
         $satellite->inclination = \App\Helper\Helper::scriptStripper($request->inclination);
         $satellite->instruments = \App\Helper\Helper::scriptStripper($request->instruments);
         $satellite->description = \App\Helper\Helper::scriptStripper($request->description);
-        $satellite->category_id = \App\Helper\Helper::scriptStripper($request->category_id);
-        $satellite->status_id = \App\Helper\Helper::scriptStripper($request->status_id);
-        $satellite->scientist_id = \App\Helper\Helper::scriptStripper($request->scientist_id);
-        $satellite->launchpad_id = \App\Helper\Helper::scriptStripper($request->launchpad_id);
+        $satellite->category = \App\Helper\Helper::scriptStripper($request->category);
+        $satellite->status = \App\Helper\Helper::scriptStripper($request->status);
+        $satellite->scientist = \App\Helper\Helper::scriptStripper($request->scientist);
+        $satellite->launch_location = \App\Helper\Helper::scriptStripper($request->launch_location);
 
         if ($request->hasFile('image2')){
             $name=public_path('uploads/images2/');
@@ -116,7 +116,7 @@ class SatelliteController extends Controller
     {
         $satellites = Satellite::where('id', $request->id)->first();
         return response()->json(['name' => $satellites->name, 'mission_name' => $satellites->mission_name, 'link' => $satellites->link, 'launch_date' => $satellites->launch_date, 'complete_date' => $satellites->complete_date, 'altitude' => $satellites->altitude, 'inclination' => $satellites->inclination, 'instruments' => $satellites->instruments, 'description' => $satellites->description,
-            'investigators' => $satellites->investigators,  'category_id' => $satellites->getCategory->name, 'status_id' => $satellites->status_id, 'scientist_id' => $satellites->scientist_id, 'launchpad_id' => $satellites->launchpad_id, 'image' => $satellites->image, 'image_2' => $satellites->image_2]);
+            'investigators' => $satellites->investigators,  'category' => $satellites->category, 'status' => $satellites->status, 'scientist' => $satellites->scientist,'scientist2' => $satellites->scientist2,'launch_location' => $satellites->launch_location, 'image' => $satellites->image, 'image_2' => $satellites->image_2]);
 
     }
 
@@ -134,10 +134,11 @@ class SatelliteController extends Controller
             "image" => "string|max:255",
             "image_2" => "string|max:255",
             "description" => "string",
-            "category_id" => ['nullable', Rule::exists(Category::class, "id")],
-            "status_id" => ['nullable', Rule::exists(Status::class, "id")],
-            "scientist_id" => ['nullable', Rule::exists(Scientist::class, "id")],
-            "launchpad_id" => ['nullable', Rule::exists(LaunchPad::class, "id")],
+            "category" => "string",
+            "status" => "string",
+            "scientist" => "string",
+            "scientist2" => "string",
+            "launch_location" =>"string",
         ]);
 
         Satellite::where('id', $request->updateId)->update([
@@ -150,10 +151,11 @@ class SatelliteController extends Controller
             'inclination' => \App\Helper\Helper::scriptStripper($request->inclination),
             'instruments' => \App\Helper\Helper::scriptStripper($request->instruments),
             'description' => \App\Helper\Helper::scriptStripper($request->description),
-            'category_id' => \App\Helper\Helper::scriptStripper($request->status_id),
-            'status_id' => \App\Helper\Helper::scriptStripper($request->status_id),
-            'scientist_id' => \App\Helper\Helper::scriptStripper($request->scientist_id),
-            'launchpad_id' => \App\Helper\Helper::scriptStripper($request->launch_id),
+            'category' => \App\Helper\Helper::scriptStripper($request->category),
+            'status' => \App\Helper\Helper::scriptStripper($request->status),
+            'scientist' => \App\Helper\Helper::scriptStripper($request->scientist),
+            'scientist2' => \App\Helper\Helper::scriptStripper($request->scientist2),
+            'launch_location' => \App\Helper\Helper::scriptStripper($request->launch_location),
             'image' => \App\Helper\Helper::scriptStripper($request->image),
             'image_2' => \App\Helper\Helper::scriptStripper($request->image_2),
 

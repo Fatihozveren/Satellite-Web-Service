@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('status')->nullable();
             $table->string('launch_location')->nullable();
+            $table->string('scientist')->nullable();
+            $table->string('scientist2')->nullable();
             $table->timestamps();
 
         });
