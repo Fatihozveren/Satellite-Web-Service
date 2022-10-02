@@ -32,7 +32,7 @@
             <div class="satellite-item-date">2022</div>
             <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
             <div class="satellite-item-button">
-                <button><span>Learn more</span></button>
+                <button>Learn more</button>
             </div>
         </div>
         <div class="satellite-item">
@@ -42,7 +42,7 @@
             <div class="satellite-item-date">2022</div>
             <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
             <div class="satellite-item-button">
-                <button><span>Learn more</span></button>
+                <button>Learn more</button>
             </div>
         </div>
         <div class="satellite-item">
@@ -52,7 +52,7 @@
             <div class="satellite-item-date">2022</div>
             <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
             <div class="satellite-item-button">
-                <button><span>Learn more</span></button>
+                <button>Learn more</button>
             </div>
         </div>
         <div class="satellite-item">
@@ -62,7 +62,7 @@
             <div class="satellite-item-date">2022</div>
             <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
             <div class="satellite-item-button">
-                <button><span>Learn more</span></button>
+                <button>Learn more</button>
             </div>
         </div>
         <div class="satellite-item">
@@ -72,7 +72,7 @@
             <div class="satellite-item-date">2022</div>
             <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
             <div class="satellite-item-button">
-                <button><span>Learn more</span></button>
+                <button>Learn more</button>
             </div>
         </div>
         <div class="satellite-item">
@@ -82,7 +82,7 @@
             <div class="satellite-item-date">2022</div>
             <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
             <div class="satellite-item-button">
-                <button><span>Learn more</span></button>
+                <button>Learn more</button>
             </div>
         </div>
     </div>
