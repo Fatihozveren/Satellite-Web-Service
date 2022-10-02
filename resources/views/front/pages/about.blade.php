@@ -26,7 +26,7 @@
         <div class="about-items">
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
@@ -45,7 +45,7 @@
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
@@ -64,7 +64,7 @@
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
@@ -83,7 +83,7 @@
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
@@ -101,7 +101,7 @@
                 </div>
             </div><div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
@@ -120,7 +120,7 @@
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
@@ -139,7 +139,7 @@
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/about/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">

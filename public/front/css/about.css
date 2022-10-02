@@ -28,14 +28,14 @@
 .about-img img{
     border-radius: 50%;
     height: 100px;
-    width: 150px;
+    width: 100px;
     object-fit: cover;
 }
 
 .about-information{
     color: white;
+    width: calc(100% - 100px);
 }
-
 .about-items{
     display: flex;
     flex-wrap: wrap;
@@ -73,4 +73,36 @@
 
 .about-information p{
     font-family: "Lato";
+}
+
+@media (max-width: 1200px){
+    .about-information h5{
+        font-size: 15px;
+    }
+    .about-information p{
+        font-size: 10px;
+    }
+    .about-item {
+        height: 35vh;
+    }
+    .about-img img{
+        height: 80px;
+        width: 80px;
+    }
+
+}
+
+@media (max-width: 950px){
+    .about-item {
+        flex-basis: 100%;
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 769px){
+
+}
+
+@media (max-width: 480px){
+
 }

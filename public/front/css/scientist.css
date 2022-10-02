@@ -28,12 +28,13 @@
 .scientist-img img{
     border-radius: 50%;
     height: 100px;
-    width: 150px;
+    width: 100px;
     object-fit: cover;
 }
 
 .scientist-information{
     color: white;
+    width: calc(100% - 100px);
 }
 .scientist-information h5{
     font-family: BungeeHairline;
@@ -71,4 +72,37 @@
 }
 .scientist-information div{
     display: flex;
+}
+
+
+@media (max-width: 1200px){
+    .scientist-information h5{
+        font-size: 15px;
+    }
+    .scientist-information p{
+        font-size: 10px;
+    }
+    .scientist-item {
+        height: 35vh;
+    }
+    .scientist-img img{
+        height: 80px;
+        width: 80px;
+    }
+
+}
+
+@media (max-width: 950px){
+    .scientist-item {
+        flex-basis: 100%;
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 769px){
+
+}
+
+@media (max-width: 480px){
+
 }
