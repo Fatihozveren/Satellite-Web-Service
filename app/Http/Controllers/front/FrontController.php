@@ -19,7 +19,8 @@ class FrontController extends Controller
         $past_satellites_count = $past_satellites->count();
         $scientist_count=Scientist::all()->count();
         $launchpad=LaunchPad::all()->count();
-        return view('front.pages.home', compact('all_satellites', 'future_satellites', 'past_satellites','past_satellites_count','future_satellites_count','all_satellites_count','scientist_count','launchpad'));
+        $service_link=env('APP_URL').'/api/documentacion';
+        return view('front.pages.home', compact('all_satellites', 'future_satellites', 'past_satellites','past_satellites_count','future_satellites_count','all_satellites_count','scientist_count','launchpad','service_link'));
     }
 
     public function about(){
