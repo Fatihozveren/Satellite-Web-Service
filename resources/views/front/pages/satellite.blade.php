@@ -1,14 +1,35 @@
 @extends("front.layouts.app")
 @section("content")
     <style>
-        body{
-            background-image: url({{asset("media/Detay.jpeg")}});
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-        .back2{
+
+        .satellite-item{
             display: none;
+        }
+        .satellite-item.active{
+            display: block;
+        }
+        .satellite-search{
+            width: 100%;
+            max-width: 600px;
+        }
+        .satellite-search input {
+            border-radius: 0;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border: 1px solid white;
+            color: white;
+            background: #ffffff2b;
+        }
+        .satellite-title h3{
+            font-family: BungeeHairline;
+            font-weight: 800;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-size: 50px;
+            margin-top: 30px;
         }
     </style>
 <section class="satellite">
@@ -17,7 +38,7 @@
             <h3>SATELLITE</h3>
         </div>
         <div class="satellite-search">
-            <input type="search" placeholder="Satellite search">
+            <input type="search" placeholder="Satellite search" id="satellite-search">
         </div>
     </div>
 </section>
@@ -26,7 +47,7 @@
     <div class="satellite-items">
         @if(isset($satellite))
             @foreach($satellite as $st)
-            <div class="satellite-item">
+            <div class="satellite-item active">
                 <div class="satellite-item-img">
                     @if(isset($st->image_2))
                     <img src="{{asset($st->image_2)}}" alt="">
@@ -48,20 +69,22 @@
 </section>
 
 @endsection
-<script>
-    var nfts = $(".NFTName");
-    $(document).ready(function() {
-        $("#nftSearch").keyup(function(event) {
-            var search = $("#nftSearch").val().toUpperCase();
-            nfts.each(function( index ) {
-                if((nfts[index].innerHTML.toUpperCase()).indexOf(search)> -1){
-                    nfts[index].parentElement.parentElement.classList.add("active");
-                }
-                else{
-                    nfts[index].parentElement.parentElement.classList.remove("active");
-                }
-            });
+@section("scripts")
+    <script>
+        var satellites = $(".satellite-item-name");
+        $(document).ready(function() {
+            $("#satellite-search").keyup(function(event) {
+                var search = $("#satellite-search").val().toUpperCase();
+                satellites.each(function( index ) {
+                    if((satellites[index].innerHTML.toUpperCase()).indexOf(search)> -1){
+                        satellites[index].parentElement.classList.add("active");
+                    }
+                    else{
+                        satellites[index].parentElement.classList.remove("active");
+                    }
+                });
 
+            });
         });
-    });
-</script>
+    </script>
+@endsection

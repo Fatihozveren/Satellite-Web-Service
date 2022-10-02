@@ -839,6 +839,7 @@ footer .footer-social ul li a i{
     opacity: 0;
     visibility: hidden;
     cursor: pointer;
+    z-index: 55555;
 }
 .scrollTop.active{
     bottom: 0;
