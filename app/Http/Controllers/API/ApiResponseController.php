@@ -51,11 +51,11 @@ class ApiResponseController extends BaseController
      *     path="/api/launchpad_satellites",
      *     description="Get satellites by launcpad id",
      *     @OA\Parameter(
-     *      name="launchpad_id",
+     *      name="launch_location",
      *      in="query",
      *      required=true,
      *      @OA\Schema(
-     *           type="integer"
+     *           type="string"
      *      )
      *      ),
      *     @OA\Response(response="200", description="Ok"),
@@ -68,7 +68,7 @@ class ApiResponseController extends BaseController
 
     public function getLaunchpadSatellites(Request $request)
     {
-        $satellites = Satellite::where('launchpad_id', $request->launchpad_id)->get();
+        $satellites = Satellite::where('launch_location','like', '%'.$request->launch_location.'%')->get();
         if ( count($satellites) > 0) {
             return $this->sendResponse(
                 $satellites,

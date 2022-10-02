@@ -40,11 +40,11 @@
                 "operationId": "9eab4e05d328ed70d7790dffee611ff0",
                 "parameters": [
                     {
-                        "name": "launchpad_id",
+                        "name": "launch_location",
                         "in": "query",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],
