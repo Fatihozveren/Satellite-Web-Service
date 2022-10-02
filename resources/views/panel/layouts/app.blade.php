@@ -100,7 +100,7 @@
         <div class="headerLogo">
             <i class="fas fa-times"></i>
             <a href="">
-                <img src="{{asset("front/img/logo.png")}}" alt="">
+                <img src="{{asset("media/nimbusLogo.jpg")}}" alt="">
                 <div>
                     <h2>Nimbus</h2>
                     <h2>Panel</h2>
