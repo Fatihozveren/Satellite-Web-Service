@@ -30,6 +30,14 @@
     </div>
 </div>
 <main>
+    <div class="mobil-nav">
+        <div class="menuButton">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img class="mobil-logo" src="{{asset("media/logo.png")}}" alt="">
+    </div>
     <header class="">
         <div class="nasaContainer header-inner">
             <div class="header-img"><img src="{{asset("media/logo.png")}}" alt=""></div>
@@ -52,9 +60,10 @@
             <div class="footer-links">
                 <ul>
                     <li><a href="{{route("front.home")}}"><span>Home</span></a></li>
-                    <li><a href=""><span>Satellites</span></a></li>
-                    <li><a href=""><span>Scientists</span></a></li>
-                    <li><a href=""><span>About</span></a></li>
+                    <li><a href="{{route('satellite.index')}}"><span>Satellites</span></a></li>
+                    <li><a href="{{route('scientist.index')}}"><span>Scientists</span></a></li>
+                    <li><a href="{{route('about.index')}}"><span>About</span></a></li>
+                    <li><a href="{{ url()->current() }}/api/documentation"><span>Web Services</span></a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -72,12 +81,30 @@
             <p>Copyright ©2022 NasaSpaceApp. All rights reserved.</p>
         </div>
     </div>
+    <div class="scrollTop">
+        <img src="{{asset("media/96585-rocket-white.json")}}" alt="">
+    </div>
 </main>
 <script src="{{asset('jquery/jquery.min.js')}}"></script>
 <script src="{{asset('jquery/jquery-ui.min.js')}}"></script>
 <script src="{{asset('jquery/scene.js')}}"></script>
 <script src="{{asset('panel/js/index.js')}}"></script>
 <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+<script>
+    var mobilMenu = $("header");
+    var mobilButton = $(".menuButton");
+
+    $(".menuButton").click(function(event){
+        if(mobilButton.hasClass("active")){
+            mobilButton.removeClass("active");
+            mobilMenu.removeClass("active");
+        }
+        else{
+            mobilButton.addClass("active");
+            mobilMenu.addClass("active");
+        }
+    })
+</script>
 @yield("scripts")
 </body>
 </html>
