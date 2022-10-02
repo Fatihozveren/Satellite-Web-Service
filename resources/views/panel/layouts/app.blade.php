@@ -85,7 +85,10 @@
         <div>
 
             <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
-                <a href=""  target="_blank" class="btn green" >Go to Page</a>
+                <a href=""  target="_blank" class="btn blue" >Update Data</a>
+            </li>
+            <li class="nav-item font-weight-semibold d-none d-lg-block ms-0" style="margin-left: 10px;">
+                <a href="{{route('front.home')}}" target="_blank" class="btn green"  style="margin-left: 10px">Go To Page</a>
             </li>
 
         </div>

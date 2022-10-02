@@ -20,9 +20,9 @@
             <div class="header-img"><img src="{{asset("media/logo.png")}}" alt=""></div>
             <ul>
                 <li><a href="{{route("front.home")}}"><span>Home</span></a></li>
-                <li><a href=""><span>Satellites</span></a></li>
-                <li><a href=""><span>Scientists</span></a></li>
-                <li><a href=""><span>About</span></a></li>
+                <li><a href="{{route('satellite.index')}}"><span>Satellites</span></a></li>
+                <li><a href="{{route('scientist.index')}}"><span>Scientists</span></a></li>
+                <li><a href="{{route('about.index')}}"><span>About</span></a></li>
             </ul>
             <div></div>
         </div>
