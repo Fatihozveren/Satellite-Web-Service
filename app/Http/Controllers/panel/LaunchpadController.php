@@ -15,14 +15,12 @@ class LaunchpadController extends Controller
         $request->validate(
             [
                 "launchpad_name" => "string|max:255|required",
-                "location" => "string|max:255|required",
 
             ],
 
         );
         $category = new LaunchPad();
         $category->name = \App\Helper\Helper::scriptStripper($request->launchpad_name);
-        $category->location = \App\Helper\Helper::scriptStripper($request->location);
         $category->save();
         return response()->json(['Success' => 'success']);
 
@@ -59,7 +57,7 @@ class LaunchpadController extends Controller
     function get(Request $request)
     {
         $launchpad = LaunchPad::where('id', $request->id)->first();
-        return response()->json(['launchpad_name' => $launchpad->name, 'location' => $launchpad->location]);
+        return response()->json(['launchpad_name' => $launchpad->name]);
 
     }
 
@@ -67,12 +65,10 @@ class LaunchpadController extends Controller
     {
         $request->validate([
             'launchpad_name' => 'required',
-            'location' => 'required',
         ]);
 
         LaunchPad::where('id', $request->updateId)->update([
             'name' => \App\Helper\Helper::scriptStripper($request->launchpad_name),
-            'location' => \App\Helper\Helper::scriptStripper($request->location),
 
         ]);
         return response()->json(['Success' => 'success']);

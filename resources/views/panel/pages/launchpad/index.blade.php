@@ -19,9 +19,6 @@
                                     Name </label>
                                 <input type="text" name="launchpad_name" id="nameUpdate" class="form-control">
 
-                                <label class="mb-1" for="location" style="text-decoration: underline;">LaunchPads
-                                    Location </label>
-                                <input type="text" name="location" id="locationUpdate" class="form-control">
                             </div>
 
                         </div>
@@ -58,10 +55,6 @@
                                     Name </label>
                                 <input type="text" name="launchpad_name" id="launchpad_name" class="form-control">
 
-                                <label class="mb-1" for="location" style="text-decoration: underline;">LaunchPad
-                                    Location </label>
-                                <input type="text" name="location" id="location" class="form-control">
-
                             </div>
 
                         </div>
@@ -93,7 +86,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Launchpad Name</th>
-                            <th>Launchpad Location</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -103,7 +95,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Launchpad Name</th>
-                            <th>Launchpad Location</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -220,7 +211,6 @@
         function updateLaunchpad(id) {
 
             var launchpad_name = $('#nameUpdate');
-            var location = $('#locationUpdate');
 
             $.ajax({
                 type: 'GET',
@@ -229,7 +219,6 @@
                 success: function (data) {
 
                     launchpad_name.val(data.launchpad_name);
-                    location.val(data.location);
 
                     $('#updateId').val(id);
 
@@ -276,7 +265,6 @@
             columns: [
                 {data: 'id'},
                 {data: 'name'},
-                {data: 'location'},
                 {data: 'update'},
                 {data: 'delete'},
             ]

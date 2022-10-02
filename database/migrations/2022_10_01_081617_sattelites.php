@@ -32,8 +32,6 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('launch_location')->nullable();
             $table->timestamps();
-            $table->unsignedBigInteger('scientist_id')->nullable();
-            $table->foreign('scientist_id')->references('id')->on('scientists');
 
         });
     }
