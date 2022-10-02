@@ -26,95 +26,76 @@
         <div class="about-items">
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/AboutProfilImages/IE.jpeg")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
                         <h5>Name:</h5>
-                        <p>Chip</p>
+                        <p>İpek </p>
                     </div>
                     <div class="about-surname">
                         <h5>Surname:</h5>
-                        <p>Trepte</p>
+                        <p>ELDEK</p>
                     </div>
                     <div class="about-project">
                         <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                        <p>Yazılım Mühendisliği</p>
                     </div>
                 </div>
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/AboutProfilImages/GU.PNG")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
                         <h5>Name:</h5>
-                        <p>Chip</p>
+                        <p>Gizem </p>
                     </div>
                     <div class="about-surname">
                         <h5>Surname:</h5>
-                        <p>Trepte</p>
+                        <p>UÇAR</p>
                     </div>
                     <div class="about-project">
                         <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                        <p>Yazılım Mühendisliği</p>
                     </div>
                 </div>
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/AboutProfilImages/FO.jpg")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
                         <h5>Name:</h5>
-                        <p>Chip</p>
+                        <p>Fatih </p>
                     </div>
                     <div class="about-surname">
                         <h5>Surname:</h5>
-                        <p>Trepte</p>
+                        <p>ÖZVEREN</p>
                     </div>
                     <div class="about-project">
                         <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="about-item">
-                <div class="about-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="about-information">
-                    <div class="about-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="about-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                        <p>Yazılım Mühendisliği</p>
                     </div>
                 </div>
             </div><div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/AboutProfilImages/YCA.png")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
                         <h5>Name:</h5>
-                        <p>Chip</p>
+                        <p>Yusuf Çağlar </p>
                     </div>
                     <div class="about-surname">
                         <h5>Surname:</h5>
-                        <p>Trepte</p>
+                        <p>AKSOY</p>
                     </div>
                     <div class="about-project">
                         <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                        <p>Yazılım Mühendisliği</p>
                     </div>
                 </div>
             </div>
@@ -125,34 +106,34 @@
                 <div class="about-information">
                     <div class="about-name">
                         <h5>Name:</h5>
-                        <p>Chip</p>
+                        <p>Semih</p>
                     </div>
                     <div class="about-surname">
                         <h5>Surname:</h5>
-                        <p>Trepte</p>
+                        <p>YÜCEL</p>
                     </div>
                     <div class="about-project">
                         <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                        <p>Yazılım Mühendisliği</p>
                     </div>
                 </div>
             </div>
             <div class="about-item">
                 <div class="about-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
+                    <img src="{{asset("media/AboutProfilImages/MG.jpeg")}}" alt="">
                 </div>
                 <div class="about-information">
                     <div class="about-name">
                         <h5>Name:</h5>
-                        <p>Chip</p>
+                        <p>Mehmet</p>
                     </div>
                     <div class="about-surname">
                         <h5>Surname:</h5>
-                        <p>Trepte</p>
+                        <p>GEÇİCİ</p>
                     </div>
                     <div class="about-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                        <h5>Bölüm:</h5>
+                        <p>Yazılım Mühendisliği</p>
                     </div>
                 </div>
             </div>
