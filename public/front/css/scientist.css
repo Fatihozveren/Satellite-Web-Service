@@ -27,7 +27,7 @@
 
 .scientist-img img{
     border-radius: 50%;
-    height: 150px;
+    height: 120px;
     width: 150px;
     object-fit: cover;
 }
@@ -47,7 +47,7 @@
     background-repeat: round;
     background-size: contain;
     flex-basis: 50%;
-    max-width: 35%;
+    max-width: 40%;
     height: 40vh;
     padding: 20px;
     margin: 20px 5px;
@@ -57,7 +57,7 @@
     justify-content: center;
 }
 .scientist-img{
-    margin-right: 10px;
+    margin-right: 25px;
 }
 .scientist-information div{
     display: flex;

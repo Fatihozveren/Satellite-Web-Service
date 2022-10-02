@@ -1,0 +1,64 @@
+.about{
+    padding-top: 80px;
+}
+.title-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-title{
+    font-family: BungeeHairline;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.about-search input{
+    border-radius: 2em;
+    padding: 10px;
+    width: 20vw;
+    border: none;
+}
+
+.about-img img{
+    border-radius: 50%;
+    height: 120px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.about-information{
+    color: white;
+}
+
+.about-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.about-item{
+    background-image: url(../../media/Vector7.png);
+    background-repeat: round;
+    background-size: contain;
+    flex-basis: 50%;
+    max-width: 40%;
+    height: 40vh;
+    padding: 20px;
+    margin: 20px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.about-img{
+    margin-right: 25px;
+}
+.about-information div{
+    display: flex;
+}
