@@ -10,6 +10,7 @@ class SatelliteController extends Controller
     public function index(){
 
         $satellite=Satellite::all();
-        return view('front.pages.satellite', compact('satellite'));
+        $satellite_date=Satellite::orderBy('launch_date', 'ASC')->get();
+        return view('front.pages.satellite', compact('satellite','satellite_date'));
     }
 }
