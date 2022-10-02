@@ -1,5 +1,16 @@
 @extends("front.layouts.app")
 @section("content")
+    <style>
+        body{
+            background-image: url({{asset("media/Detay.jpeg")}});
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .back2{
+            display: none;
+        }
+    </style>
 <section class="satellite">
     <div class="title-search">
         <div class="satellite-title">

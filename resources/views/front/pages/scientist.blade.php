@@ -2,8 +2,13 @@
 @section("content")
     <style>
         body{
-            background-image: url("public/media/Detay.jpeg");
-
+            background-image: url({{asset("media/Detay.jpeg")}});
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .back2{
+            display: none;
         }
     </style>
     <section class="scientist">
