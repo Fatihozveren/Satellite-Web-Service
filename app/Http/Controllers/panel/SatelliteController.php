@@ -98,6 +98,7 @@ class SatelliteController extends Controller
             })->addColumn('delete', function ($data) {
                 return "<button onclick='deleteSatellite(" . $data->id . ")' class='btn btn-danger'>Delete</button>";
             })
+
             ->rawColumns(['update', 'delete'])
             ->make(true);
     }
@@ -115,7 +116,7 @@ class SatelliteController extends Controller
     {
         $satellites = Satellite::where('id', $request->id)->first();
         return response()->json(['name' => $satellites->name, 'mission_name' => $satellites->mission_name, 'link' => $satellites->link, 'launch_date' => $satellites->launch_date, 'complete_date' => $satellites->complete_date, 'altitude' => $satellites->altitude, 'inclination' => $satellites->inclination, 'instruments' => $satellites->instruments, 'description' => $satellites->description,
-            'investigators' => $satellites->investigators,  'category_id' => $satellites->category_id, 'status_id' => $satellites->status_id, 'scientist_id' => $satellites->scientist_id, 'launchpad_id' => $satellites->launchpad_id, 'image' => $satellites->image, 'image_2' => $satellites->image_2]);
+            'investigators' => $satellites->investigators,  'category_id' => $satellites->getCategory->name, 'status_id' => $satellites->status_id, 'scientist_id' => $satellites->scientist_id, 'launchpad_id' => $satellites->launchpad_id, 'image' => $satellites->image, 'image_2' => $satellites->image_2]);
 
     }
 
