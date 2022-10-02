@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('front/css/satellite.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/scientist.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/about.css')}}">
-
+    <title>Nimbus Heroes</title>
 </head>
 <body class="demo">
 <div class="back2">
