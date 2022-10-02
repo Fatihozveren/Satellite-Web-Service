@@ -8,7 +8,8 @@
         <div class="entrance-inner nasaContainer">
             <div class="entrance-left">
                 <h3 class="linearText">Nasa Space Exploration</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac purus rhoncus, nibh pulvinar lacus, amet, risus. Nisl, venenatis turpis imperdiet tellus sed.</p>
+                <p>It is now easier to access all satellites
+                    launched with the Satellite Web Service...</p>
             </div>
             <div class="entrance-right">
                 <img src="{{asset("media/entrance-inner.png")}}" alt="">
@@ -16,181 +17,87 @@
         </div>
     </section>
     <section class="datas nasaContainer">
-        <div class="data">
-            <h4 class="linearText">Past Satellites</h4>
-            <h3 class="count" data-value="1200"></h3>
-        </div>
-        <div class="big data">
-            <h4 class="linearText">Present Satellites</h4>
-            <h3 class="count" data-value="11200"></h3>
-        </div>
-        <div class="data">
-            <h4 class="linearText">Future Satellites</h4>
-            <h3 class="count" data-value="800"></h3>
-        </div>
+        @if(isset($future_satellites_count))
+            @if(isset($past_satellites_count))
+                @if(isset($all_satellites_count))
+
+                    <div class="data">
+                        <h4 class="linearText">Past Satellites</h4>
+
+                        <h3 class="count" data-value="{{$past_satellites_count}}"></h3>
+                    </div>
+                    <div class="big data">
+                        <h4 class="linearText">ALL Satellites</h4>
+                        <h3 class="count" data-value="{{$all_satellites_count}}"></h3>
+                    </div>
+                    <div class="data">
+                        <h4 class="linearText">Future Satellites</h4>
+                        <h3 class="count" data-value="{{$future_satellites_count}}"></h3>
+                    </div>
+
+                @endif
+            @endif
+        @endif
     </section>
     <section class="future-satellites nasaContainer">
-        <h1>FUTURE SATELLİTES</h1>
+        <h1>FUTURE SATELLITES</h1>
+
         <div class="future-satellites-top">
-            <div class="future-satellites-left">
-                <div class="future-satellites-earth">
-                    <img src="{{asset("media/earth.gif")}}" alt="">
+            @if(isset($future_satellites))
+
+                <div class="future-satellites-left">
+
+                    <div class="future-satellites-earth">
+                        <img src="{{asset("media/earth.gif")}}" alt="">
+                    </div>
+                    <div class="satellites">
+                        @foreach($future_satellites as $key=>$fs)
+                            <div class="satellite satellite-{{$fs->id}} @if($key==0)active @endif">
+                                <img src="{{asset($fs->image)}}" alt="">
+                            </div>
+
+                        @endforeach
+
+
+                    </div>
+
+                    @endif
                 </div>
-                <div class="satellites">
-                    <div class="satellite satellite-1 active">
-                        <img src="{{asset("media/Satellite/calipso.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-2">
-                        <img src="{{asset("media/Satellite/cats.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-3">
-                        <img src="{{asset("media/Satellite/cloudsat.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-4">
-                        <img src="{{asset("media/Satellite/cress.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-5">
-                        <img src="{{asset("media/Satellite/calipso.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-6">
-                        <img src="{{asset("media/Satellite/cats.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-7">
-                        <img src="{{asset("media/Satellite/cloudsat.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-8">
-                        <img src="{{asset("media/Satellite/cress.png")}}" alt="">
-                    </div>
-                    <div class="satellite satellite-9">
-                        <img src="{{asset("media/Satellite/calipso.png")}}" alt="">
-                    </div>
+
+                <div class="future-satellites-right">
+                    @foreach($future_satellites as $key=>$fs)
+
+                        <div class="satellite-text satellite-{{$fs->id}} @if($key==0) active @endif">
+                            <h4 class="linearText">{{$fs->name}}</h4>
+                            <div>
+                                <p><b>Status :</b>{{$fs->status}}</p>
+                                <p><b>Mission Category :</b>{{$fs->category}}</p>
+                                <p><b>Launch Date :</b>{{$fs->launch_date}}</p>
+                                <p><b>Launch Location :</b>{{$fs->launch_location}}</p>
+                            </div>
+                        </div>
+
+                    @endforeach
+
                 </div>
-            </div>
-            <div class="future-satellites-right">
-                <div class="satellite-text satellite-1 active">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-2">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-3">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-4">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-5">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-6">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-7">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-8">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-                <div class="satellite-text satellite-9">
-                    <h4 class="linearText">ACTIVE CAVITY RADIOMATER IRRADIANCE MONITOR SATELLİTE</h4>
-                    <div>
-                        <p><b>Status :</b>Completed</p>
-                        <p><b>Mission Category :</b>Earth Observing System (EOS)</p>
-                        <p><b>Launch Date :</b>December 20, 1999</p>
-                        <p><b>Launch Location :</b>Vandenberg Air Force Base, CA</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="other-satellites-slider">
             <i class="fa-thin fa-arrow-left-long"></i>
             <div class="other-satellites-slides">
                 <div class="other-satellites">
-                    <div class="other-satellite" id="satellite-1">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-2">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-3">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-4">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-5">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-6">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-7">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-8">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
-                    <div class="other-satellite" id="satellite-9">
-                        <img src="{{asset("media/Satellite/CRRESS.jpg")}}" alt="">
-                        <h4>Lorem ipsum dolor. </h4>
-                    </div>
+                    @foreach($future_satellites as $fs)
+
+                        <div class="other-satellite" id="satellite-{{$fs->id}}">
+                            @if(isset($fs->image2))
+                                <img src="{{asset($fs->image2)}}" alt="">
+                            @else
+                                <img src="{{asset($fs->image)}}" alt="">
+                            @endif
+                            <h4>{{$fs->name}} </h4>
+                        </div>
+
+                    @endforeach
                 </div>
             </div>
             <i class="fa-thin fa-arrow-right-long"></i>
@@ -201,46 +108,53 @@
         <div class="astro-planets-left">
             <div>
                 <img src="{{asset("media/jupiter.png")}}" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa eius explicabo itaque nesciunt quod voluptas.</p>
+                <p>The number of Starlink satellites launched into orbit has reached 2 thousand 957.</p>
             </div>
             <div>
                 <img src="{{asset("media/mars.png")}}" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa eius explicabo itaque nesciunt quod voluptas.</p>
+                <p>NASA scientists are easier to find...</p>
             </div>
         </div>
         <div class="astro-planets-right">
             <div>
                 <img src="{{asset("media/neptun.png")}}" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa eius explicabo itaque nesciunt quod voluptas.</p>
+                <p>More fun to access satellite information...</p>
             </div>
             <div>
                 <img src="{{asset("media/uranus.png")}}" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa eius explicabo itaque nesciunt quod voluptas.</p>
+                <p>More fun to access satellite information...</p>
             </div>
             <div>
                 <img src="{{asset("media/venus.png")}}" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa eius explicabo itaque nesciunt quod voluptas.</p>
             </div>
         </div>
     </section>
     <section class="general-statistics">
         <div class="general-statistics-inner">
             <div class="general-statistics-left">
-                <h3>General statistics </h3>
-                <p>All satellites</p>
-                <h2>7,455,732</h2>
+                @if(isset($all_satellites_count))
+                    <h3>General Statistics </h3>
+                    <p>All Satellites</p>
+                    <h2>{{$all_satellites_count}}</h2>
+                @endif
                 <div class="statistics-inner">
                     <i class="fa-regular fa-user-astronaut"></i>
+
                     <div>
-                        <span>SCIENTS</span>
-                        <h4>3,698</h4>
+                        @if(isset($scientist_count))
+                            <span>SCIENTIST</span>
+                            <h4>{{$scientist_count}}</h4>
+                        @endif
+
                     </div>
                 </div>
                 <div class="statistics-inner">
                     <i class="fa-sharp fa-solid fa-flag"></i>
                     <div>
-                        <span>COUNTRİES</span>
-                        <h4>3,698</h4>
+                        @if(isset($launchpad))
+                            <span>COUNTRIES</span>
+                            <h4>{{$launchpad}}</h4>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -342,6 +256,7 @@
             this.check = false;
         }
         $(window).scroll(function (event) {
+
             if($(window).scrollTop()>0 && check){
                 count();
             }
