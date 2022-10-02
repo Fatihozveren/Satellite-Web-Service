@@ -209,7 +209,7 @@
 
         function updateStatu(id) {
 
-            var category_name = $('#nameUpdate');
+            var statu_name = $('#nameUpdate');
 
             $.ajax({
                 type: 'GET',
@@ -217,7 +217,7 @@
                 data: {id: id},
                 success: function (data) {
 
-                    category_name.val(data.category_name);
+                    statu_name.val(data.name);
 
                     $('#updateId').val(id);
 

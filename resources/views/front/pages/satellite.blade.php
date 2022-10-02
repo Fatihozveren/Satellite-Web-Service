@@ -23,68 +23,26 @@
 </section>
 
 <section class="nasaContainer ">
-
     <div class="satellite-items">
-        <div class="satellite-item">
-            <div class="satellite-item-img">
-                <img src="{{asset("media/entrance-inner.png")}}" alt="">
+        @if(isset($satellite))
+            @foreach($satellite as $st)
+            <div class="satellite-item">
+                <div class="satellite-item-img">
+                    @if(isset($st->image_2))
+                    <img src="{{asset($st->image_2)}}" alt="">
+                    @else
+                        <img src="{{asset("media/entrance-inner.png")}}" alt="">
+                    @endif
+
+                </div>
+                <div class="satellite-item-date">{{$st->launch_date}}</div>
+                <div class="satellite-item-name">{{$st->name}}</div>
+                <div class="satellite-item-button">
+                    <button>Learn more</button>
+                </div>
             </div>
-            <div class="satellite-item-date">2022</div>
-            <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
-            <div class="satellite-item-button">
-                <button>Learn more</button>
-            </div>
-        </div>
-        <div class="satellite-item">
-            <div class="satellite-item-img">
-                <img src="{{asset("media/entrance-inner.png")}}" alt="">
-            </div>
-            <div class="satellite-item-date">2022</div>
-            <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
-            <div class="satellite-item-button">
-                <button>Learn more</button>
-            </div>
-        </div>
-        <div class="satellite-item">
-            <div class="satellite-item-img">
-                <img src="{{asset("media/entrance-inner.png")}}" alt="">
-            </div>
-            <div class="satellite-item-date">2022</div>
-            <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
-            <div class="satellite-item-button">
-                <button>Learn more</button>
-            </div>
-        </div>
-        <div class="satellite-item">
-            <div class="satellite-item-img">
-                <img src="{{asset("media/entrance-inner.png")}}" alt="">
-            </div>
-            <div class="satellite-item-date">2022</div>
-            <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
-            <div class="satellite-item-button">
-                <button>Learn more</button>
-            </div>
-        </div>
-        <div class="satellite-item">
-            <div class="satellite-item-img">
-                <img src="{{asset("media/entrance-inner.png")}}" alt="">
-            </div>
-            <div class="satellite-item-date">2022</div>
-            <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
-            <div class="satellite-item-button">
-                <button>Learn more</button>
-            </div>
-        </div>
-        <div class="satellite-item">
-            <div class="satellite-item-img">
-                <img src="{{asset("media/entrance-inner.png")}}" alt="">
-            </div>
-            <div class="satellite-item-date">2022</div>
-            <div class="satellite-item-name">Cloud-Aerosol Transport System on ISS (CATS on ISS)</div>
-            <div class="satellite-item-button">
-                <button>Learn more</button>
-            </div>
-        </div>
+            @endforeach
+        @endif
     </div>
 
 </section>
