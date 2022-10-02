@@ -6,7 +6,7 @@
         </div>
         <div class="entrance-inner nasaContainer">
             <div class="entrance-left">
-                <h3 class="linearText">Nasa Space Expolaration</h3>
+                <h3 class="linearText">Nasa Space Explaration</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac purus rhoncus, nibh pulvinar lacus, amet, risus. Nisl, venenatis turpis imperdiet tellus sed.</p>
             </div>
             <div class="entrance-right">

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('font-awesome/css/all.css')}}"/>
     <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/satellite.css')}}">
 </head>
 <body>
 <main>
