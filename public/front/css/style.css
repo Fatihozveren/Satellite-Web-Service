@@ -12,6 +12,14 @@ html{
 body{
     width: 100vw;
     overflow-x: hidden;
+    position: relative;
+}
+body:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: black;
 }
 .nasaContainer{
@@ -73,6 +81,14 @@ body{
         left: -90px;
         bottom: -90px;
         transform: scale(0);
+    }
+}
+@keyframes astros {
+    0% {
+        top: 40px;
+    }
+    100% {
+        top: 100px;
     }
 }
 header{
@@ -154,6 +170,11 @@ header ul li.active:before {
     background-size: cover;
     width: 100%;
 }
+.entrance>.entrance-img>div{
+    background: linear-gradient(180deg, black 20%, #ffffff00 91%);
+    height: 150px;
+    width: 100%;
+}
 .entrance>.entrance-img img{
     width: 100%;
     height: 100%;
@@ -164,7 +185,7 @@ header ul li.active:before {
     position: absolute;
     z-index: 55;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 150px);
     background-color: rgba(0, 0, 0, 0.5);
 }
 .entrance>img:before{
@@ -204,9 +225,7 @@ header ul li.active:before {
     font-size: 20px;
     line-height: 24px;
 }
-.entrance .entrance-inner .entrance-right{
 
-}
 .entrance .entrance-inner .entrance-right img{
     width: 100%;
     animation: float 6s infinite ease-in-out alternate;
@@ -270,6 +289,7 @@ header ul li.active:before {
     display: flex;
     max-width: 1080px;
     margin: auto;
+    width: 100%;
 }
 .future-satellites .future-satellites-left{
     position: relative;
@@ -282,12 +302,13 @@ header ul li.active:before {
 .future-satellites .future-satellites-left .future-satellites-earth:before{
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
+    width: 314px;
+    height: 314px;
+    border-radius: 50%;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    top: 17px;
     z-index: 1;
-    left: 0;
+    left: 17px;
 }
 .future-satellites .future-satellites-left .future-satellites-earth img{
     width: 350px;
@@ -307,6 +328,9 @@ header ul li.active:before {
     opacity: 0;
     visibility: hidden;
     z-index: 55;
+    left: 150px;
+    bottom: 150px;
+    transform: scale(0);
 }
 .future-satellites .future-satellites-left .satellites .satellite.active{
     opacity: 1;
@@ -321,13 +345,20 @@ header ul li.active:before {
 .future-satellites .future-satellites-right{
     width: calc(100% - 350px);
     padding-left: 50px;
+    position: relative;
 }
 .future-satellites .future-satellites-right .satellite-text{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 300vw;
+    transition: 400ms all;
+}
+.future-satellites .future-satellites-right .satellite-text.active{
+    left: 0;
 }
 .future-satellites .future-satellites-right .satellite-text h4{
     font-size: 30px;
@@ -384,11 +415,13 @@ header ul li.active:before {
     display: flex;
     width: max-content;
     position: absolute;
+    left: 0;
+    transition: 400ms all;
 }
 .future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
     width: calc(100vw / 8);
     height: calc(100vw / 8);
-    padding: 10px;
+    margin: 10px;
     position: relative;
     cursor: pointer;
 }
@@ -435,4 +468,313 @@ header ul li.active:before {
         position: relative;
         cursor: pointer;
     }
+}
+.general-statistics{
+    padding-left: calc((100% - 1480px) / 2 );
+}
+.general-statistics .general-statistics-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.general-statistics .general-statistics-inner .general-statistics-left{
+    color: white;
+}
+.general-statistics .general-statistics-inner .general-statistics-left h3{
+    font-family: 'BungeeHairline';
+    font-weight: 700;
+}
+.general-statistics .general-statistics-inner .general-statistics-left p{
+    font-family: 'LatoLight';
+}
+.general-statistics .general-statistics-inner .general-statistics-left h2{
+    font-family: 'BungeeRegular';
+}
+.general-statistics .general-statistics-inner .general-statistics-left .statistics-inner{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.general-statistics .general-statistics-inner .general-statistics-left .statistics-inner i{
+    background: var(--blue);
+    height: 50px;
+    width: 50px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.general-statistics .general-statistics-inner .general-statistics-left .statistics-inner i.fa-flag{
+    background: var(--purple);
+}
+.general-statistics .general-statistics-inner .general-statistics-left .statistics-inner div h4{
+    margin: 0;
+    font-family: 'BungeeRegular';
+    font-size: 18px;
+}
+.general-statistics .general-statistics-inner .general-statistics-right{
+    width: 60%;
+    position: relative;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map{
+    position: absolute;
+    width: 47.5%;
+    height: 55%;
+    top: 20%;
+    left: 23%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad-on-map-inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad{
+    width: 20px;
+    position: absolute;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .us-launch .launch-pad{
+    top: 40%;
+    left: 45%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .fr-launch .launch-pad{
+    right: 25%;
+    top: 22%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .jp-launch .launch-pad{
+    bottom: 39%;
+    right: 34%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .rus-launch .launch-pad{
+    left: 30%;
+    top: 17%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad .fa-circle-dot{
+    color: rgba(28, 219, 59, 1);
+    font-size: 25px;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad .fa-rocket-launch{
+    background-color: black;
+    border-radius: 5px;
+    padding: 2px 15px;
+    font-size: 20px;
+    margin-left: -25px;
+    transition: 400ms all;
+    cursor: pointer;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-icos{
+    transition: 400ms all;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .us-launch .launch-pad{
+    color: rgba(223, 27, 27, 1);
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .fr-launch .launch-pad{
+    color: rgba(71, 242, 201, 1);
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .jp-launch .launch-pad{
+    color: rgba(255, 246, 212, 1);
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .rus-launch .launch-pad{
+    color: rgba(207, 140, 248, 1);
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .us-launch .fa-rocket-launch:hover{
+    background-color: rgba(223, 27, 27, 1);
+    color: black;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .fr-launch .fa-rocket-launch:hover{
+    background-color: rgba(71, 242, 201, 1);
+    color: black;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .jp-launch .fa-rocket-launch:hover{
+    background-color: rgba(255, 246, 212, 1);
+    color: black;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .rus-launch .fa-rocket-launch:hover{
+    background-color: rgba(207, 140, 248, 1);
+    color: black;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad-detail{
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    background: black;
+    border-radius: 10px;
+    gap: 1vw;
+    padding: 1vw;
+    width: max-content;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms all;
+    z-index: 5555;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .us-launch .launch-pad-detail{
+    top: -5%;
+    left: -15px;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .us-launch:hover .launch-pad-detail{
+    top: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .fr-launch .launch-pad-detail{
+    top: -25%;
+    right: 14%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .fr-launch:hover .launch-pad-detail{
+    top: -20%;
+    opacity: 1;
+    visibility: visible;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .rus-launch .launch-pad-detail{
+    top: -27%;
+    left: 11%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .rus-launch:hover .launch-pad-detail{
+    top: -22%;
+    opacity: 1;
+    visibility: visible;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .jp-launch .launch-pad-detail{
+    top: 0%;
+    left: 43%;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .jp-launch:hover .launch-pad-detail{
+    top: 5%;
+    opacity: 1;
+    visibility: visible;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad-detail div{
+    display: flex;
+    flex-direction: column;
+    width: 7vw;
+    gap: 12px;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad-detail>i{
+    position: absolute;
+    left: calc(50%);
+    transform: rotate(90deg);
+    color: black;
+    bottom: -20px;
+    font-size: 25px;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad-detail div img{
+    width: 7vw;
+    height: 5vw;
+    display: block;
+    object-fit: cover;
+}
+.general-statistics .general-statistics-inner .general-statistics-right .launch-pad-on-map .launch-pad-detail div h3{
+    font-size: 10px;
+    font-family: 'BungeeHairline';
+    color: white;
+    font-weight: 700;
+    width: 100%;
+}
+.astro-planets{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 120px auto;
+}
+.astro-planets>img{
+    animation: astros 6s infinite ease-in-out alternate;
+    position: absolute;
+}
+.astro-planets>div{
+    width: 50%;
+}
+.astro-planets .astro-planets-left div:first-child{
+    display: flex;
+    padding-left: 25%;
+    margin-bottom: 70px;
+    width: 90%;
+}
+.astro-planets .astro-planets-left div:first-child img{
+
+}
+.astro-planets .astro-planets-left div:last-child{
+    display: flex;
+    flex-direction: column;
+    padding-right: 60%;
+    margin-top: 100px;
+}
+.astro-planets .astro-planets-left div:last-child img{
+    width: 40%;
+    order: 1;
+}
+.astro-planets .astro-planets-right div:first-child{
+    display: flex;
+    gap: 20px;
+    width: 65%;
+    align-items: flex-end;
+    margin-left: 35%;
+}
+.astro-planets .astro-planets-right div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    margin-left: 56%;
+    margin-top: 100px;
+    gap: 40px;
+}
+.astro-planets .astro-planets-right div:last-child{
+    display: flex;
+    flex-direction: column;
+    margin-left: 42%;
+    margin-top: 100px;
+    gap: 40px;
+}
+.astro-planets div div img{
+    max-width: 175px;
+}
+.astro-planets div div p{
+    color: white;
+    font-family: 'LatoLight';
+    font-size: 15px;
+}
+footer{
+    background: rgba(12, 15, 21, 1);
+}
+.footer-inner{
+    display: flex;
+    padding: 60px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .footer-links ul{
+    display: flex;
+    gap: 35px;
+    font-family: 'LatoLight';
+}
+footer .footer-links ul li a {
+    color: white;
+}
+footer .footer-links ul li a:hover{
+
+}
+footer .footer-social {
+
+}
+footer .footer-social ul{
+    display: flex;
+    gap: 15px
+}
+footer .footer-social ul li a i{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    justify-content: center;
+    color: rgba(12, 15, 21, 1);;
+}
+.copyright{
+    background: black;
+}
+.copyright p{
+    font-family: "Lato Light";
+    color: white;
+    margin: 15px 0;
 }

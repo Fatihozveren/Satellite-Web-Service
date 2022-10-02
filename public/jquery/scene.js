@@ -12,9 +12,9 @@ var starCount;
 var circleRadius;
 var circleCenter;
 var first = true;
-var giantColor = "255,80,3";
-var starColor = "0,0,0";
-var cometColor = "255,80,3";
+var giantColor = "177,105,191";
+var starColor = "255,255,255";
+var cometColor = "155,79,176";
 var canva = document.getElementById("universe");
 var stars = [];
 
