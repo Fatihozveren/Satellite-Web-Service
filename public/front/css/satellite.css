@@ -28,11 +28,12 @@
 .satellite-items{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .satellite-item{
     flex-basis: 50%;
-    max-width: 50%;
+    max-width: 40%;
     height: 75vh;
     padding: 5px;
     display: flex;

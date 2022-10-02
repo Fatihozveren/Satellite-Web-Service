@@ -1,5 +1,11 @@
 @extends("front.layouts.app")
 @section("content")
+    <style>
+        body{
+            background-image: url("public/media/Detay.jpeg");
+
+        }
+    </style>
     <section class="scientist">
         <div class="title-search">
             <div class="scientist-title">
