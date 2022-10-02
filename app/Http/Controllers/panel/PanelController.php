@@ -184,6 +184,8 @@ class PanelController extends Controller
         $designed_life_index=null;
         $designed_life_ctrl=true;
 
+        $t=0;
+
 
         foreach ($trimmed_dizis as $key=>$value){
             if ($value=='Status:'){
@@ -241,12 +243,11 @@ class PanelController extends Controller
                 $launch_location_index=$key;
             }
             if ($launch_location_ctrl && !is_null($launch_location_index) && $key >= $launch_location_index ){
-                if (str_contains($value,'Designed Life:') || strpos($value, "\n")!==false){
-                    $launch_location_ctrl=false;
-                }
+
 
                 if ($launch_location_ctrl){
                     $launch_location=$launch_location.' '.$value;
+                    $launch_location_ctrl=false;
 
                 }
             }
@@ -260,10 +261,12 @@ class PanelController extends Controller
                     $designed_life_ctrl=false;
                 }
 
-                if ($designed_life_ctrl){
+                if ($designed_life_ctrl && $t==0){
                     $designed_life=$designed_life.' '.$value;
+                    $t++;
 
                 }
+
 
             }
 
@@ -281,9 +284,12 @@ class PanelController extends Controller
         $designed_life=str_replace('Designed Life: ','',$designed_life);
         $designed_life=trim($designed_life);
 
+
+
         $satellite->status = $status;
         $satellite->category = $mission_category;
         $satellite->launch_location = $launch_location;
+
         $satellite->design_life = $designed_life;
         $satellite->save();
     }
