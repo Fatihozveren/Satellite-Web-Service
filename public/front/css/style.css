@@ -831,6 +831,23 @@ footer .footer-social ul li a i{
 .mobil-logo{
     display: none;
 }
+.scrollTop{
+    bottom: 100vh;
+    position: fixed;
+    right: 25px;
+    transition: 400ms all;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+.scrollTop.active{
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.scrollTop lottie-player{
+    width: 125px;
+}
 @media only screen and (max-width: 1500px) {
     .nasaContainer{
         width: 95% !important;

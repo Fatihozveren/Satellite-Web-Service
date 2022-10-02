@@ -48,3 +48,20 @@
 </section>
 
 @endsection
+<script>
+    var nfts = $(".NFTName");
+    $(document).ready(function() {
+        $("#nftSearch").keyup(function(event) {
+            var search = $("#nftSearch").val().toUpperCase();
+            nfts.each(function( index ) {
+                if((nfts[index].innerHTML.toUpperCase()).indexOf(search)> -1){
+                    nfts[index].parentElement.parentElement.classList.add("active");
+                }
+                else{
+                    nfts[index].parentElement.parentElement.classList.remove("active");
+                }
+            });
+
+        });
+    });
+</script>

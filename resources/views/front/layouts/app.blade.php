@@ -83,7 +83,7 @@
         </div>
     </div>
     <div class="scrollTop">
-        <img src="{{asset("media/96585-rocket-white.json")}}" alt="">
+        <lottie-player class="world" src="https://lottie.host/c7a232c9-de40-4cdd-a185-9c5954f0e400/QHGH2WH4xB.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>
     </div>
 </main>
 <script src="{{asset('jquery/jquery.min.js')}}"></script>
@@ -91,10 +91,11 @@
 <script src="{{asset('jquery/scene.js')}}"></script>
 <script src="{{asset('panel/js/index.js')}}"></script>
 <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script>
     var mobilMenu = $("header");
     var mobilButton = $(".menuButton");
-
+    var scroll = true
     $(".menuButton").click(function(event){
         if(mobilButton.hasClass("active")){
             mobilButton.removeClass("active");
@@ -104,6 +105,21 @@
             mobilButton.addClass("active");
             mobilMenu.addClass("active");
         }
+    })
+    $(window).scroll(function (event) {
+        if($(window).scrollTop()>0 && scroll){
+            $(".scrollTop").addClass("active")
+        }
+        else{
+            $(".scrollTop").removeClass("active")
+        }
+    })
+    function scrollTrue(){
+        scroll = true;
+    }
+    $(".scrollTop").click(function () {
+        $(".scrollTop").removeClass("active")
+        $(window).scrollTop(0);
     })
 </script>
 @yield("scripts")

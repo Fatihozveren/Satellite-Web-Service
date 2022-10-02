@@ -256,7 +256,6 @@
             this.check = false;
         }
         $(window).scroll(function (event) {
-
             if($(window).scrollTop()>0 && check){
                 count();
             }
