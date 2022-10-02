@@ -201,6 +201,7 @@ class PanelController extends Controller
                 }
             }
 
+
             if ($value=='Mission Category:'){
                 $mission_category_index=$key;
 
@@ -215,6 +216,7 @@ class PanelController extends Controller
                     $mission_category=$mission_category.' '.$value;
 
                 }
+
 
                 if (str_contains($value,'Launch Date:')){
                     $launch_date_index=$key;
@@ -232,8 +234,8 @@ class PanelController extends Controller
 
                 }
 
-
             }
+
 
             if (str_contains($value,'Launch Location:')){
                 $launch_location_index=$key;
@@ -249,11 +251,12 @@ class PanelController extends Controller
                 }
             }
 
+
             if (str_contains($value,'Designed Life:')){
                 $designed_life_index=$key;
             }
             if ($designed_life_ctrl && !is_null($designed_life_index) && $key >= $designed_life_index ){
-                if (str_contains($value,'Designed Life:')){
+                if (str_contains($value,'Designed Life:'|| strpos($value, "\n")!==false)){
                     $designed_life_ctrl=false;
                 }
 
@@ -268,8 +271,10 @@ class PanelController extends Controller
 
         $status=str_replace('Status: ','',$status);
         $status=trim($status);
+
         $mission_category=str_replace('Mission Category: ','',$mission_category);
         $mission_category=trim($mission_category);
+
         $launch_location=str_replace('Launch Location: ','',$launch_location);
         $launch_location=trim($launch_location);
 
