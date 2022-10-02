@@ -1,0 +1,64 @@
+.scientist{
+    padding-top: 80px;
+}
+.title-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scientist-title{
+    font-family: BungeeHairline;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.scientist-search input{
+    border-radius: 2em;
+    padding: 10px;
+    width: 20vw;
+    border: none;
+}
+
+.scientist-img img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.scientist-information{
+    color: white;
+}
+
+.scientist-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.scientist-item{
+    background-image: url(../../media/Vector7.png);
+    background-repeat: round;
+    background-size: contain;
+    flex-basis: 50%;
+    max-width: 35%;
+    height: 40vh;
+    padding: 20px;
+    margin: 20px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.scientist-img{
+    margin-right: 10px;
+}
+.scientist-information div{
+    display: flex;
+}

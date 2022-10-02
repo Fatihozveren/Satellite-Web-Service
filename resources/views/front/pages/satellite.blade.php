@@ -11,7 +11,7 @@
     </div>
 </section>
 
-<section>
+<section class="nasaContainer ">
 
     <div class="satellite-items">
         <div class="satellite-item">

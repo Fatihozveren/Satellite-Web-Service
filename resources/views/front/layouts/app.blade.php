@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/scene.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/satellite.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/scientist.css')}}">
 
 </head>
 <body class="demo">
