@@ -24,6 +24,10 @@
 
     <section class="nasaContainer">
         <div class="scientist-items">
+            @if(isset($scientist))
+            @if(isset($satellite))
+                @foreach($scientist as $sc)
+                @foreach($satellite as $st)
             <div class="scientist-item">
                     <div class="scientist-img">
                         <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
@@ -31,133 +35,22 @@
                     <div class="scientist-information">
                         <div class="scientist-name">
                             <h5>Name:</h5>
-                            <p>Chip</p>
+                            <p>{{$sc->name}}</p>
                         </div>
                         <div class="scientist-surname">
                             <h5>Surname:</h5>
-                            <p>Trepte</p>
+                            <p>{{$sc->surname}}</p>
                         </div>
                         <div class="scientist-project">
                             <h5>Project:</h5>
-                            <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
+                            <p>{{$st->name}}</p>
                         </div>
                     </div>
             </div>
-            <div class="scientist-item">
-                <div class="scientist-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="scientist-information">
-                    <div class="scientist-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="scientist-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="scientist-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scientist-item">
-                <div class="scientist-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="scientist-information">
-                    <div class="scientist-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="scientist-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="scientist-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scientist-item">
-                <div class="scientist-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="scientist-information">
-                    <div class="scientist-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="scientist-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="scientist-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div><div class="scientist-item">
-                <div class="scientist-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="scientist-information">
-                    <div class="scientist-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="scientist-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="scientist-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scientist-item">
-                <div class="scientist-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="scientist-information">
-                    <div class="scientist-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="scientist-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="scientist-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scientist-item">
-                <div class="scientist-img">
-                    <img src="{{asset("media/Scientist/indir.jfif")}}" alt="">
-                </div>
-                <div class="scientist-information">
-                    <div class="scientist-name">
-                        <h5>Name:</h5>
-                        <p>Chip</p>
-                    </div>
-                    <div class="scientist-surname">
-                        <h5>Surname:</h5>
-                        <p>Trepte</p>
-                    </div>
-                    <div class="scientist-project">
-                        <h5>Project:</h5>
-                        <p>Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO)</p>
-                    </div>
-                </div>
-            </div>
-
-
+                @endforeach
+                @endforeach
+            @endif
+            @endif
         </div>
     </section>
 @endsection
