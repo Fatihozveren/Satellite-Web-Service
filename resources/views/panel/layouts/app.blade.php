@@ -159,6 +159,15 @@
 
             </li>
 
+            <li>
+                <a href="{{route('about.list')}}" title="About">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                    <i class="fas fa-caret-right"></i>
+                </a>
+
+            </li>
+
         </ul>
 
     </aside>

@@ -70,6 +70,15 @@ Route::group(['prefix' => '/launchpad'], function () {
     Route::post('/update', [\App\Http\Controllers\panel\LaunchpadController::class, 'update'])->name('launchpad.update');
 });
 
+Route::group(['prefix' => '/about'], function () {
+    Route::post('/create', [\App\Http\Controllers\panel\AboutController::class, "create"])->name('about.create');
+    Route::get('/list', [\App\Http\Controllers\panel\AboutController::class, "list"])->name('about.list');
+    Route::get('/fetch', [\App\Http\Controllers\panel\AboutController::class, 'fetch'])->name('about.fetch');
+    Route::post('/delete', [\App\Http\Controllers\panel\AboutController::class, 'delete'])->name('about.delete');
+    Route::get('/get', [\App\Http\Controllers\panel\AboutController::class, 'get'])->name('about.get');
+    Route::post('/update', [\App\Http\Controllers\panel\AboutController::class, 'update'])->name('about.update');
+});
+
 Route::get('/updateData', [\App\Http\Controllers\panel\PanelController::class, "updateData"])->name('satellite.updateData');
 
 
