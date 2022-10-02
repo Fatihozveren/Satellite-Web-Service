@@ -159,6 +159,17 @@ class PanelController extends Controller
         $ham_veri = trim($ham_veri);
         $dizis=explode("        ", $ham_veri);
         $trimmed_dizis = array_map('trim', $dizis);
+
+        $string = ' ' . $ham_veri;
+        $ini = strpos($string, '<a href="/sites/default/files');
+        if ($ini == 0) return '';
+        $ini += strlen('<a href="/sites/default/files');
+        $len = strpos($string, '" target="', $ini) - $ini;
+        $data=substr($string, $ini, $len);
+        $data = trim($data);
+        $image_2='https://eospso.nasa.gov/sites/default/files/'.$data;
+
+
         $trimmed_dizis = array_map(function($trimmed_dizis){
             return trim(strip_tags($trimmed_dizis));}, $trimmed_dizis);
         $trimmed_dizis=array_filter($trimmed_dizis);
@@ -285,12 +296,16 @@ class PanelController extends Controller
         $designed_life=trim($designed_life);
 
 
+        $launch_date=str_replace('Launch Date: ','',$launch_date);
+        $launch_date=trim($launch_date);
 
         $satellite->status = $status;
         $satellite->category = $mission_category;
         $satellite->launch_location = $launch_location;
+        $satellite->launch_date=$launch_date;
 
         $satellite->design_life = $designed_life;
+        $satellite->image_2 = $image_2;
         $satellite->save();
     }
 }
