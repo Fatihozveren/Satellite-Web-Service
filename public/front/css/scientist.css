@@ -27,7 +27,7 @@
 
 .scientist-img img{
     border-radius: 50%;
-    height: 120px;
+    height: 100px;
     width: 150px;
     object-fit: cover;
 }
@@ -35,7 +35,14 @@
 .scientist-information{
     color: white;
 }
+.scientist-information h5{
+    font-family: BungeeHairline;
+    font-weight: 600;
+}
 
+.scientist-information p{
+    font-family: "Lato";
+}
 .scientist-items{
     display: flex;
     flex-wrap: wrap;
@@ -46,6 +53,9 @@
     background-image: url(../../media/Vector7.png);
     background-repeat: round;
     background-size: contain;
+    background: linear-gradient(90deg, #0a1d26 0%, #4c3951 81.92%);
+    /* clip-path: polygon(0% 0%, 80% 0%, 100% 29%, 100% 100%, 20% 100%, 0% 80%); */
+    clip-path: polygon(0% 0%, 83% 0%, 100% 25%, 100% 100%, 18% 100%, 0% 76%);
     flex-basis: 50%;
     max-width: 40%;
     height: 40vh;
