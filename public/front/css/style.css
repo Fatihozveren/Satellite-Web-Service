@@ -8,6 +8,7 @@ html{
     overflow-x: hidden;
     --purple:#93709B;
     --blue:#236F93;
+    scroll-behavior: smooth;
 }
 body{
     width: 100vw;
@@ -454,21 +455,7 @@ header ul li.active:before {
     opacity: 1;
     visibility: visible;
 }
-@media only screen and (max-width: 1500px) {
-    .nasaContainer{
-        width: 95% !important;
-    }
-    .future-satellites .other-satellites-slider{
-        height: calc((100vw / 7) + 80px);
-    }
-    .future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
-        width: calc(100vw / 7);
-        height: calc(100vw / 7);
-        padding: 10px;
-        position: relative;
-        cursor: pointer;
-    }
-}
+
 .general-statistics{
     padding-left: calc((100% - 1480px) / 2 );
 }
@@ -680,6 +667,7 @@ header ul li.active:before {
 .astro-planets>img{
     animation: astros 6s infinite ease-in-out alternate;
     position: absolute;
+    z-index: -1;
 }
 .astro-planets>div{
     width: 50%;
@@ -690,8 +678,8 @@ header ul li.active:before {
     margin-bottom: 70px;
     width: 90%;
 }
-.astro-planets .astro-planets-left div:first-child img{
-
+.astro-planets .astro-planets-left div img{
+    object-fit: contain;
 }
 .astro-planets .astro-planets-left div:last-child{
     display: flex;
@@ -777,4 +765,145 @@ footer .footer-social ul li a i{
     font-family: "Lato Light";
     color: white;
     margin: 15px 0;
+}
+@media only screen and (max-width: 1500px) {
+    .nasaContainer{
+        width: 95% !important;
+    }
+    .future-satellites .other-satellites-slider{
+        height: calc((100vw / 7) + 80px);
+    }
+    .future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
+        width: calc(100vw / 7);
+        height: calc(100vw / 7);
+        padding: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .general-statistics{
+        padding-left: calc(5% / 2 );
+    }
+}
+@media only screen and (max-width: 1230px) {
+    .nasaContainer{
+        width: 95% !important;
+    }
+    .datas .data:before {
+        background-size: cover;
+    }
+    .datas .data {
+        width: 260px;
+        height: 160px;
+    }
+    .datas .data.big {
+        width: 304px;
+        height: 204px;
+    }
+    .linearText {
+        font-size: 22px;
+    }
+    .future-satellites .other-satellites-slider{
+        height: calc((100vw / 5) + 80px);
+    }
+    .future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
+        width: calc(100vw / 5);
+        height: calc(100vw / 5);
+    }
+}
+@media only screen and (max-width: 1080px) {
+    .nasaContainer{
+        width: 95% !important;
+    }
+    .future-satellites .future-satellites-right .satellite-text h4 {
+        font-size: 24px;
+    }
+    .future-satellites .future-satellites-right .satellite-text div p {
+        font-size: 15px;
+    }
+    .future-satellites>h1 {
+        font-size: 40px;
+    }
+    .astro-planets div div {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        gap: 30px !important;
+    }
+    .astro-planets {
+        flex-direction: column;
+        background-image: linear-gradient(45deg, transparent, black, transparent);
+    }
+    .astro-planets>div {
+        width: 100%;
+        gap: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+    .astro-planets .astro-planets-left div:last-child img{
+        order: 0;
+    }
+    .general-statistics .general-statistics-inner{
+        flex-direction: column;
+    }
+    .general-statistics .general-statistics-inner>div{
+        width: 100% !important;
+    }
+    .datas {
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 auto;
+    }
+    .entrance .entrance-inner .entrance-right img{
+        width: 450px
+    }
+    .entrance .entrance-inner .entrance-left {
+        width: calc(100% - 450px);
+    }
+    .entrance .entrance-inner .entrance-left p{
+        max-width: 100%;
+    }
+    .entrance .entrance-inner>div {
+        width: max-content;
+    }
+    .future-satellites .other-satellites-slider{
+        height: calc((100vw / 3) + 80px);
+    }
+    .future-satellites .other-satellites-slider .other-satellites-slides .other-satellite{
+        width: calc(100vw / 3);
+        height: calc(100vw / 3);
+    }
+    .footer-inner {
+        gap: 30px;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 768px){
+    .future-satellites .future-satellites-left {
+        margin: auto;
+    }
+    .future-satellites .future-satellites-top {
+        flex-direction: column;
+    }
+    .future-satellites .future-satellites-right {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+    .astro-planets div div img {
+        max-width: 100px;
+    }
+    .entrance .entrance-inner {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .entrance .entrance-inner>div {
+        width: 100% !important;
+    }
+    .entrance .entrance-inner .entrance-left {
+        order: 1;
+    }
 }

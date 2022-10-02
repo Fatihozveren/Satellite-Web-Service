@@ -38,6 +38,7 @@
                 <li><a href="{{route('satellite.index')}}"><span>Satellites</span></a></li>
                 <li><a href="{{route('scientist.index')}}"><span>Scientists</span></a></li>
                 <li><a href="{{route('about.index')}}"><span>About</span></a></li>
+                <li><a href="{{ url()->current() }}/api/documentation"><span>Web Services</span></a></li>
             </ul>
             <div></div>
         </div>
