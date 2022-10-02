@@ -192,7 +192,7 @@ class PanelController extends Controller
 
             if ($status_ctrl && !is_null($status_index) && $key >= $status_index ){
                 if ($value=='Mission Category:' || $value=='Launch Date:' || $value=='Launch Location:'
-                    || $value=='Designed Life:'){
+                    || $value=='Designed Life:' || strpos($value, "\n")!==false){
                     $status_ctrl=false;
                 }
                 if ($status_ctrl){
@@ -206,7 +206,7 @@ class PanelController extends Controller
 
             }
             if ($mission_category_ctrl && !is_null($mission_category_index) && $key >= $mission_category_index ){
-                if (str_contains($value,'Launch Date:')||str_contains($value,'Launch Location:')
+                if (str_contains($value,'Launch Date:')||str_contains($value,'Launch Location:' || strpos($value, "\n")!==false)
                     || str_contains($value,'Designed Life:')){
                     $mission_category_ctrl=false;
                 }
@@ -221,7 +221,7 @@ class PanelController extends Controller
                 }
 
                 if ($launch_date_ctrl && !is_null($launch_date_index) && $key >= $launch_date_index ){
-                    if (str_contains($value,'Launch Location:') || str_contains($value,'Designed Life:')){
+                    if (str_contains($value,'Launch Location:') || str_contains($value,'Designed Life:' || strpos($value, "\n")!==false)){
                         $launch_date_ctrl=false;
                     }
 
@@ -276,12 +276,8 @@ class PanelController extends Controller
         $designed_life=str_replace('Designed Life: ','',$designed_life);
         $designed_life=trim($designed_life);
 
-
-        $satellite->status_id = Status::where('name',$status)->first()->id;
-        if ($satellite->slug=='aqua'){
-        }
-        $satellite->category_id = Category::where('name',$mission_category)->first()->id;
-
+        $satellite->status = $status;
+        $satellite->category = $mission_category;
         $satellite->launch_location = $launch_location;
         $satellite->design_life = $designed_life;
         $satellite->save();

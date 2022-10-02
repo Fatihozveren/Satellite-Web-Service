@@ -28,14 +28,12 @@ return new class extends Migration
             $table->string('image_2')->nullable();
             $table->text('description')->nullable();
             $table->string('slug')->nullable();
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->unsignedBigInteger('status_id')->nullable();
-            $table->unsignedBigInteger('scientist_id')->nullable();
+            $table->string('category')->nullable();
+            $table->string('status')->nullable();
             $table->string('launch_location')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('scientist_id')->nullable();
             $table->foreign('scientist_id')->references('id')->on('scientists');
-            $table->foreign('status_id')->references('id')->on('status');
-            $table->foreign('category_id')->references('id')->on('categories');
 
         });
     }
